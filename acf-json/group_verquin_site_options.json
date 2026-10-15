@@ -1,0 +1,216 @@
+{
+	"key": "group_verquin_site_options",
+	"title": "Site Options",
+	"fields": [
+		{
+			"key": "field_verquin_site_phone",
+			"label": "Phone",
+			"name": "site_phone",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "As displayed, e.g. (208) 555-0134.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_site_email",
+			"label": "Email",
+			"name": "site_email",
+			"aria-label": "",
+			"type": "email",
+			"instructions": "Public contact address.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_site_address",
+			"label": "Address",
+			"name": "site_address",
+			"aria-label": "",
+			"type": "textarea",
+			"instructions": "One line per line of the address.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"rows": 4,
+			"placeholder": "",
+			"new_lines": ""
+		},
+		{
+			"key": "field_verquin_site_footer_tagline",
+			"label": "Footer tagline",
+			"name": "site_footer_tagline",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "The sentence under the brandmark in the footer. This is its own copy, not the Customizer tagline, which only supplies the logo's fallback alt text.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_site_cta_eyebrow",
+			"label": "CTA eyebrow",
+			"name": "site_cta_eyebrow",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "Small label above the heading, e.g. Contact.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_site_cta_heading",
+			"label": "CTA heading",
+			"name": "site_cta_heading",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "Heading of the contact band shown above the footer on every page. <br> and <em> are allowed.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_site_cta_lede",
+			"label": "CTA lede",
+			"name": "site_cta_lede",
+			"aria-label": "",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"rows": 3,
+			"placeholder": "",
+			"new_lines": ""
+		},
+		{
+			"key": "field_verquin_site_cta_primary_link",
+			"label": "CTA primary button",
+			"name": "site_cta_primary_link",
+			"aria-label": "",
+			"type": "link",
+			"instructions": "Search for a page, or paste a URL, mailto: or tel: link. The link text becomes the button label.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array"
+		},
+		{
+			"key": "field_verquin_site_cta_secondary_link",
+			"label": "CTA secondary button",
+			"name": "site_cta_secondary_link",
+			"aria-label": "",
+			"type": "link",
+			"instructions": "Rendered as the outlined button.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "50",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array"
+		},
+		{
+			"key": "field_verquin_site_brochure",
+			"label": "Brochure",
+			"name": "site_brochure",
+			"aria-label": "",
+			"type": "file",
+			"instructions": "PDF offered as the brochure download.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"return_format": "array",
+			"library": "all",
+			"min_size": "",
+			"max_size": "",
+			"mime_types": "pdf"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "options_page",
+				"operator": "==",
+				"value": "verquin-site-options"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "Site-wide values used by the footer, the contact CTA band, and brochure links.",
+	"show_in_rest": 0,
+	"modified": 1791672251
+}

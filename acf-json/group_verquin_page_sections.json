@@ -1,0 +1,3204 @@
+{
+	"key": "group_verquin_page_sections",
+	"title": "Page sections",
+	"fields": [
+		{
+			"key": "field_verquin_page_sections",
+			"label": "Page sections",
+			"name": "page_sections",
+			"aria-label": "",
+			"type": "flexible_content",
+			"instructions": "The page's bands, in order. The page head is above and is always present.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layouts": {
+				"layout_verquin_band": {
+					"key": "layout_verquin_band",
+					"name": "band",
+					"label": "Band",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_verquin_band_eyebrow",
+							"label": "Eyebrow",
+							"name": "band_eyebrow",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_verquin_band_id",
+							"label": "Anchor id",
+							"name": "band_id",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "Optional, for in-page links, e.g. inquiry.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_verquin_band_heading",
+							"label": "Heading",
+							"name": "band_heading",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "&lt;br&gt; and &lt;em&gt; are allowed.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_verquin_band_lede",
+							"label": "Lede",
+							"name": "band_lede",
+							"aria-label": "",
+							"type": "textarea",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"rows": 3,
+							"placeholder": "",
+							"new_lines": ""
+						},
+						{
+							"key": "field_verquin_band_rows",
+							"label": "Rows",
+							"name": "band_rows",
+							"aria-label": "",
+							"type": "flexible_content",
+							"instructions": "The band's content rows, in order. A band may have none.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"layouts": {
+								"layout_verquin_row_placeholder": {
+									"key": "layout_verquin_row_placeholder",
+									"name": "placeholder",
+									"label": "Placeholder",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_row_placeholder_note",
+											"label": "Note",
+											"name": "placeholder_note",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "Text shown in the placeholder marker. Leave empty for the default wording.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_text_media": {
+									"key": "layout_verquin_row_text_media",
+									"name": "text-media",
+									"label": "Text and media",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_text_media_media_kind",
+											"label": "Media column",
+											"name": "text_media_media_kind",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "What sits beside the text. Tables uses this row's own Tables repeater. Leave empty for a full-width text row. Figure, Diagram and Video are set up at the foot of this row.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "70",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"figure": "Figure",
+												"diagram": "Diagram",
+												"tables": "Tables",
+												"video": "Video"
+											},
+											"default_value": "figure",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 1,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_text_media_flip",
+											"label": "Flip",
+											"name": "text_media_flip",
+											"aria-label": "",
+											"type": "true_false",
+											"instructions": "Put the media column on the left.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "30",
+												"class": "",
+												"id": ""
+											},
+											"message": "",
+											"default_value": 0,
+											"ui": 1,
+											"ui_on_text": "",
+											"ui_off_text": ""
+										},
+										{
+											"key": "field_verquin_text_media_eyebrow",
+											"label": "Eyebrow",
+											"name": "text_media_eyebrow",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "70",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										},
+										{
+											"key": "field_verquin_text_media_heading",
+											"label": "Heading",
+											"name": "text_media_heading",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "&lt;br&gt; and &lt;em&gt; are allowed.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										},
+										{
+											"key": "field_verquin_text_media_body",
+											"label": "Body",
+											"name": "text_media_body",
+											"aria-label": "",
+											"type": "wysiwyg",
+											"instructions": "Paragraphs, bold, italic and links.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"tabs": "visual",
+											"toolbar": "basic",
+											"media_upload": 0,
+											"delay": 0
+										},
+										{
+											"key": "field_verquin_text_media_callout",
+											"label": "Callout",
+											"name": "text_media_callout",
+											"aria-label": "",
+											"type": "textarea",
+											"instructions": "Optional emphasised line below the body.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"rows": 3,
+											"placeholder": "",
+											"new_lines": ""
+										},
+										{
+											"key": "field_verquin_text_media_buttons",
+											"label": "Buttons",
+											"name": "text_media_buttons",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "table",
+											"min": 0,
+											"max": 2,
+											"button_label": "Add button",
+											"sub_fields": [
+												{
+													"key": "field_verquin_text_media_buttons_link",
+													"label": "Link",
+													"name": "text_media_buttons_link",
+													"aria-label": "",
+													"type": "link",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "80",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "array"
+												},
+												{
+													"key": "field_verquin_text_media_buttons_style",
+													"label": "Style",
+													"name": "text_media_buttons_style",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "20",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"solid": "Solid",
+														"ghost": "Ghost"
+													},
+													"default_value": "solid",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												}
+											]
+										},
+										{
+											"key": "field_verquin_text_media_group",
+											"label": "Labelled passages",
+											"name": "text_media_group",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "Short labelled passages, shown after the body.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 0,
+											"max": 0,
+											"button_label": "Add passage",
+											"sub_fields": [
+												{
+													"key": "field_verquin_text_media_group_label",
+													"label": "Label",
+													"name": "text_media_group_label",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_text_media_group_text",
+													"label": "Text",
+													"name": "text_media_group_text",
+													"aria-label": "",
+													"type": "wysiwyg",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"tabs": "visual",
+													"toolbar": "basic",
+													"media_upload": 0,
+													"delay": 0
+												}
+											]
+										},
+										{
+											"key": "field_verquin_text_media_table",
+											"label": "Tables",
+											"name": "text_media_table",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "Specification tables, shown after the labelled passages â€” or beside the text, when Media column is set to Tables.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 0,
+											"max": 4,
+											"button_label": "Add table",
+											"sub_fields": [
+												{
+													"key": "field_verquin_text_media_table_caption",
+													"label": "Caption",
+													"name": "text_media_table_caption",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_text_media_table_rows",
+													"label": "Rows",
+													"name": "text_media_table_rows",
+													"aria-label": "",
+													"type": "repeater",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "table",
+													"min": 1,
+													"max": 0,
+													"button_label": "Add row",
+													"sub_fields": [
+														{
+															"key": "field_verquin_text_media_table_rows_label",
+															"label": "Label",
+															"name": "text_media_table_rows_label",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "40",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														},
+														{
+															"key": "field_verquin_text_media_table_rows_value",
+															"label": "Value",
+															"name": "text_media_table_rows_value",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "60",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														}
+													]
+												}
+											]
+										},
+										{
+											"key": "field_verquin_text_media_closing",
+											"label": "Closing text",
+											"name": "text_media_closing",
+											"aria-label": "",
+											"type": "wysiwyg",
+											"instructions": "Optional paragraph after the callout.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"tabs": "visual",
+											"toolbar": "basic",
+											"media_upload": 0,
+											"delay": 0
+										},
+										{
+											"key": "field_verquin_text_media_link",
+											"label": "Links",
+											"name": "text_media_link",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "Related links, shown after the closing text.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "table",
+											"min": 0,
+											"max": 0,
+											"button_label": "Add link",
+											"sub_fields": [
+												{
+													"key": "field_verquin_text_media_link_link",
+													"label": "Link",
+													"name": "text_media_link_link",
+													"aria-label": "",
+													"type": "link",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "75",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "array"
+												},
+												{
+													"key": "field_verquin_text_media_link_external",
+													"label": "New tab",
+													"name": "text_media_link_external",
+													"aria-label": "",
+													"type": "true_false",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "25",
+														"class": "",
+														"id": ""
+													},
+													"message": "",
+													"default_value": 0,
+													"ui": 1,
+													"ui_on_text": "",
+													"ui_off_text": ""
+												}
+											]
+										},
+										{
+											"key": "field_verquin_text_media_diagram",
+											"label": "Diagram",
+											"name": "text_media_diagram",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "Diagrams ship with the theme; the choices come from verquin_diagrams().",
+											"required": 0,
+											"conditional_logic": [
+												[
+													{
+														"field": "field_verquin_text_media_media_kind",
+														"operator": "==",
+														"value": "diagram"
+													}
+												]
+											],
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"choices": [],
+											"default_value": "",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 1,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_text_media_video",
+											"label": "Video",
+											"name": "text_media_video",
+											"aria-label": "",
+											"type": "group",
+											"instructions": "YouTube only. With no URL, a labelled placeholder is shown instead, so the row can be composed before the video exists.",
+											"required": 0,
+											"conditional_logic": [
+												[
+													{
+														"field": "field_verquin_text_media_media_kind",
+														"operator": "==",
+														"value": "video"
+													}
+												]
+											],
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"sub_fields": [
+												{
+													"key": "field_verquin_text_media_video_url",
+													"label": "YouTube URL",
+													"name": "text_media_video_url",
+													"aria-label": "",
+													"type": "url",
+													"instructions": "Watch, share, embed or shorts link.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "70",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_text_media_video_ratio",
+													"label": "Ratio",
+													"name": "text_media_video_ratio",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "Leave empty for the default 16:9.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "30",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"tall": "Tall (4:5)",
+														"wide": "Wide (21:9)"
+													},
+													"default_value": "",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 1,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_text_media_video_slot",
+													"label": "Slot code",
+													"name": "text_media_video_slot",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "From the photo-slot sheet, e.g. SVC-07. Used by the placeholder until the video is supplied.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "34",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_text_media_video_placeholder",
+													"label": "Placeholder description",
+													"name": "text_media_video_placeholder",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Shown in the placeholder while the video is missing.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "66",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_text_media_video_caption",
+													"label": "Caption",
+													"name": "text_media_video_caption",
+													"aria-label": "",
+													"type": "textarea",
+													"instructions": "Also supplies the embed's accessible name.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "70",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"rows": 2,
+													"placeholder": "",
+													"new_lines": ""
+												},
+												{
+													"key": "field_verquin_text_media_video_credit",
+													"label": "Credit",
+													"name": "text_media_video_credit",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "30",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												}
+											]
+										},
+										{
+											"key": "field_verquin_text_media_figure",
+											"label": "Figure",
+											"name": "text_media_figure",
+											"aria-label": "",
+											"type": "group",
+											"instructions": "With a slot code but no image, a labelled placeholder is shown.",
+											"required": 0,
+											"conditional_logic": [
+												[
+													{
+														"field": "field_verquin_text_media_media_kind",
+														"operator": "==",
+														"value": "figure"
+													}
+												]
+											],
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"sub_fields": [
+												{
+													"key": "field_verquin_text_media_figure_image",
+													"label": "Image",
+													"name": "text_media_figure_image",
+													"aria-label": "",
+													"type": "image",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "id",
+													"library": "all",
+													"preview_size": "medium"
+												},
+												{
+													"key": "field_verquin_text_media_figure_slot",
+													"label": "Slot code",
+													"name": "text_media_figure_slot",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "From the photo-slot sheet, e.g. HOM-01.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "34",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_text_media_figure_kind",
+													"label": "Asset type",
+													"name": "text_media_figure_kind",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "Labels the placeholder box only; it does not change what the column renders. For a real video, set Media column to Video.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"Photo": "Photo",
+														"Plot": "Plot",
+														"Drawing": "Drawing",
+														"Map": "Map",
+														"Video": "Video",
+														"Graphic + PDF": "Graphic + PDF"
+													},
+													"default_value": "Photo",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_text_media_figure_ratio",
+													"label": "Ratio",
+													"name": "text_media_figure_ratio",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "Leave empty to keep the image's own proportions.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"standard": "Standard (16:10)",
+														"tall": "Tall (4:5)",
+														"wide": "Wide (21:9)"
+													},
+													"default_value": "",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 1,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_text_media_figure_fit",
+													"label": "Fit",
+													"name": "text_media_figure_fit",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "How the image meets its frame. Cover crops it to fill the frame. Contain fits the whole image inside it, which keeps titles and edges readable on document thumbnails.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"cover": "Cover (crop to fill)",
+														"contain": "Contain (fit whole image)"
+													},
+													"default_value": "cover",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_text_media_figure_placeholder",
+													"label": "Image description",
+													"name": "text_media_figure_placeholder",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "What the image shows, in a few words. Used as the image's alt text, and shown in the placeholder until the image arrives. Alt text set on the image in the Media Library wins over this.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_text_media_figure_caption",
+													"label": "Caption",
+													"name": "text_media_figure_caption",
+													"aria-label": "",
+													"type": "textarea",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "70",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"rows": 2,
+													"placeholder": "",
+													"new_lines": ""
+												},
+												{
+													"key": "field_verquin_text_media_figure_credit",
+													"label": "Credit",
+													"name": "text_media_figure_credit",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "30",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_spec_tables": {
+									"key": "layout_verquin_row_spec_tables",
+									"name": "spec-tables",
+									"label": "Specification tables",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_spec_tables_paired",
+											"label": "Side by side",
+											"name": "spec_tables_paired",
+											"aria-label": "",
+											"type": "true_false",
+											"instructions": "Two columns from tablet width. Off, tables stack.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "50",
+												"class": "",
+												"id": ""
+											},
+											"message": "",
+											"default_value": 0,
+											"ui": 1,
+											"ui_on_text": "",
+											"ui_off_text": ""
+										},
+										{
+											"key": "field_verquin_spec_tables_narrow",
+											"label": "Narrow",
+											"name": "spec_tables_narrow",
+											"aria-label": "",
+											"type": "true_false",
+											"instructions": "Cap the row at reading width.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "50",
+												"class": "",
+												"id": ""
+											},
+											"message": "",
+											"default_value": 0,
+											"ui": 1,
+											"ui_on_text": "",
+											"ui_off_text": ""
+										},
+										{
+											"key": "field_verquin_spec_tables_table",
+											"label": "Tables",
+											"name": "spec_tables_table",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "One to four tables.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 1,
+											"max": 4,
+											"button_label": "Add table",
+											"sub_fields": [
+												{
+													"key": "field_verquin_spec_tables_table_caption",
+													"label": "Caption",
+													"name": "spec_tables_table_caption",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Shown above the table.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_spec_tables_table_rows",
+													"label": "Rows",
+													"name": "spec_tables_table_rows",
+													"aria-label": "",
+													"type": "repeater",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "table",
+													"min": 1,
+													"max": 0,
+													"button_label": "Add row",
+													"sub_fields": [
+														{
+															"key": "field_verquin_spec_tables_table_rows_label",
+															"label": "Label",
+															"name": "spec_tables_table_rows_label",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "40",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														},
+														{
+															"key": "field_verquin_spec_tables_table_rows_value",
+															"label": "Value",
+															"name": "spec_tables_table_rows_value",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "60",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														}
+													]
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_cards": {
+									"key": "layout_verquin_row_cards",
+									"name": "cards",
+									"label": "Cards",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_cards_card",
+											"label": "Cards",
+											"name": "cards_card",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 1,
+											"max": 0,
+											"button_label": "Add card",
+											"sub_fields": [
+												{
+													"key": "field_verquin_cards_card_index",
+													"label": "Index",
+													"name": "cards_card_index",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Small label above the title, e.g. 01.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "20",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_cards_card_title",
+													"label": "Title",
+													"name": "cards_card_title",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Required. A card without a title is not rendered.",
+													"required": 1,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "80",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_cards_card_text",
+													"label": "Text",
+													"name": "cards_card_text",
+													"aria-label": "",
+													"type": "textarea",
+													"instructions": "Plain text, no markup.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"rows": 3,
+													"placeholder": "",
+													"new_lines": ""
+												},
+												{
+													"key": "field_verquin_cards_card_note",
+													"label": "Note",
+													"name": "cards_card_note",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Footnote, e.g. Patent protected.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "50",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_cards_card_link",
+													"label": "Link",
+													"name": "cards_card_link",
+													"aria-label": "",
+													"type": "link",
+													"instructions": "Optional. Makes the whole card a link. Leave empty if the card uses Download links below.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "50",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "array"
+												},
+												{
+													"key": "field_verquin_cards_card_figure",
+													"label": "Image",
+													"name": "cards_card_figure",
+													"aria-label": "",
+													"type": "group",
+													"instructions": "Optional tile image above the title.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "block",
+													"sub_fields": [
+														{
+															"key": "field_verquin_cards_card_figure_image",
+															"label": "Image",
+															"name": "cards_card_figure_image",
+															"aria-label": "",
+															"type": "image",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "40",
+																"class": "",
+																"id": ""
+															},
+															"return_format": "id",
+															"library": "all",
+															"preview_size": "medium"
+														},
+														{
+															"key": "field_verquin_cards_card_figure_slot",
+															"label": "Slot",
+															"name": "cards_card_figure_slot",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "Handoff slot code, e.g. NEMA-01.",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "30",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														},
+														{
+															"key": "field_verquin_cards_card_figure_kind",
+															"label": "Kind",
+															"name": "cards_card_figure_kind",
+															"aria-label": "",
+															"type": "select",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "30",
+																"class": "",
+																"id": ""
+															},
+															"choices": {
+																"Photo": "Photo",
+																"Plot": "Plot",
+																"Drawing": "Drawing",
+																"Map": "Map",
+																"Graphic + PDF": "Graphic + PDF",
+																"Logo": "Logo"
+															},
+															"default_value": "Photo",
+															"return_format": "value",
+															"multiple": 0,
+															"allow_null": 0,
+															"ui": 0,
+															"ajax": 0,
+															"placeholder": ""
+														},
+														{
+															"key": "field_verquin_cards_card_figure_fit",
+															"label": "Fit",
+															"name": "cards_card_figure_fit",
+															"aria-label": "",
+															"type": "select",
+															"instructions": "How the image meets its frame. Cover crops it to fill the frame. Contain fits the whole image inside it, which keeps titles and edges readable on document thumbnails.",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "30",
+																"class": "",
+																"id": ""
+															},
+															"choices": {
+																"cover": "Cover (crop to fill)",
+																"contain": "Contain (fit whole image)"
+															},
+															"default_value": "cover",
+															"return_format": "value",
+															"multiple": 0,
+															"allow_null": 0,
+															"ui": 0,
+															"ajax": 0,
+															"placeholder": ""
+														},
+														{
+															"key": "field_verquin_cards_card_figure_placeholder",
+															"label": "Image description",
+															"name": "cards_card_figure_placeholder",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "What the image shows, in a few words. Used as the image's alt text, and shown in the placeholder until the image arrives. Alt text set on the image in the Media Library wins over this.",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														}
+													]
+												},
+												{
+													"key": "field_verquin_cards_card_links",
+													"label": "Download links",
+													"name": "cards_card_links",
+													"aria-label": "",
+													"type": "repeater",
+													"instructions": "Links listed inside the card, e.g. Download PDF. A card with these must leave Link empty.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "table",
+													"min": 0,
+													"max": 0,
+													"button_label": "Add link",
+													"sub_fields": [
+														{
+															"key": "field_verquin_cards_card_links_link",
+															"label": "Link",
+															"name": "cards_card_links_link",
+															"aria-label": "",
+															"type": "link",
+															"instructions": "Search for a page or media item, or paste a URL. The link text becomes the label.",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "",
+																"class": "",
+																"id": ""
+															},
+															"return_format": "array"
+														},
+														{
+															"key": "field_verquin_cards_card_links_external",
+															"label": "New tab",
+															"name": "cards_card_links_external",
+															"aria-label": "",
+															"type": "true_false",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "20",
+																"class": "",
+																"id": ""
+															},
+															"message": "",
+															"default_value": 0,
+															"ui": 1,
+															"ui_on_text": "",
+															"ui_off_text": ""
+														}
+													]
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_child_index": {
+									"key": "layout_verquin_row_child_index",
+									"name": "child-index",
+									"label": "Child page index",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_child_index_mode",
+											"label": "Pages",
+											"name": "child_index_mode",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "Automatic lists this page's published children in menu order.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"children": "This page's children",
+												"selected": "Chosen pages"
+											},
+											"default_value": "children",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 0,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_child_index_pages",
+											"label": "Chosen pages",
+											"name": "child_index_pages",
+											"aria-label": "",
+											"type": "relationship",
+											"instructions": "In the order they should appear.",
+											"required": 0,
+											"conditional_logic": [
+												[
+													{
+														"field": "field_verquin_child_index_mode",
+														"operator": "==",
+														"value": "selected"
+													}
+												]
+											],
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"post_type": [
+												"page"
+											],
+											"post_status": [
+												"publish"
+											],
+											"taxonomy": [],
+											"filters": [
+												"search"
+											],
+											"return_format": "id",
+											"min": "",
+											"max": "",
+											"elements": ""
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_gallery": {
+									"key": "layout_verquin_row_gallery",
+									"name": "gallery",
+									"label": "Gallery",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_gallery_figure",
+											"label": "Figures",
+											"name": "gallery_figure",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "Two or more figures in an auto-fitting grid.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 1,
+											"max": 0,
+											"button_label": "Add figure",
+											"sub_fields": [
+												{
+													"key": "field_verquin_gallery_figure_image",
+													"label": "Image",
+													"name": "gallery_figure_image",
+													"aria-label": "",
+													"type": "image",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "id",
+													"library": "all",
+													"preview_size": "medium"
+												},
+												{
+													"key": "field_verquin_gallery_figure_slot",
+													"label": "Slot code",
+													"name": "gallery_figure_slot",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "From the photo-slot sheet, e.g. STA-02.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "34",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_gallery_figure_kind",
+													"label": "Asset type",
+													"name": "gallery_figure_kind",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"Photo": "Photo",
+														"Plot": "Plot",
+														"Drawing": "Drawing",
+														"Map": "Map",
+														"Video": "Video",
+														"Graphic + PDF": "Graphic + PDF"
+													},
+													"default_value": "Photo",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_gallery_figure_ratio",
+													"label": "Ratio",
+													"name": "gallery_figure_ratio",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "Leave empty for the default 16:10.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"tall": "Tall (4:5)",
+														"wide": "Wide (21:9)"
+													},
+													"default_value": "",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 1,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_gallery_figure_fit",
+													"label": "Fit",
+													"name": "gallery_figure_fit",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "How the image meets its frame. Cover crops it to fill the frame. Contain fits the whole image inside it, which keeps titles and edges readable on document thumbnails.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"cover": "Cover (crop to fill)",
+														"contain": "Contain (fit whole image)"
+													},
+													"default_value": "cover",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_gallery_figure_placeholder",
+													"label": "Image description",
+													"name": "gallery_figure_placeholder",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "What the image shows, in a few words. Used as the image's alt text, and shown in the placeholder until the image arrives. Alt text set on the image in the Media Library wins over this.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_gallery_figure_caption",
+													"label": "Caption",
+													"name": "gallery_figure_caption",
+													"aria-label": "",
+													"type": "textarea",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "70",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"rows": 2,
+													"placeholder": "",
+													"new_lines": ""
+												},
+												{
+													"key": "field_verquin_gallery_figure_credit",
+													"label": "Credit",
+													"name": "gallery_figure_credit",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "30",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_figure": {
+									"key": "layout_verquin_row_figure",
+									"name": "figure",
+									"label": "Figure",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_figure_narrow",
+											"label": "Narrow",
+											"name": "figure_narrow",
+											"aria-label": "",
+											"type": "true_false",
+											"instructions": "Cap the figure at reading width.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"message": "",
+											"default_value": 0,
+											"ui": 1,
+											"ui_on_text": "",
+											"ui_off_text": ""
+										},
+										{
+											"key": "field_verquin_figure_figure",
+											"label": "Figure",
+											"name": "figure_figure",
+											"aria-label": "",
+											"type": "group",
+											"instructions": "With a slot code but no image, a labelled placeholder is shown.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"sub_fields": [
+												{
+													"key": "field_verquin_figure_figure_image",
+													"label": "Image",
+													"name": "figure_figure_image",
+													"aria-label": "",
+													"type": "image",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "id",
+													"library": "all",
+													"preview_size": "medium"
+												},
+												{
+													"key": "field_verquin_figure_figure_slot",
+													"label": "Slot code",
+													"name": "figure_figure_slot",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "From the photo-slot sheet, e.g. GEO-02.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "34",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_figure_figure_kind",
+													"label": "Asset type",
+													"name": "figure_figure_kind",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "Logo renders the framework's white logo card.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"Photo": "Photo",
+														"Plot": "Plot",
+														"Drawing": "Drawing",
+														"Map": "Map",
+														"Video": "Video",
+														"Graphic + PDF": "Graphic + PDF",
+														"Logo": "Logo"
+													},
+													"default_value": "Photo",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_figure_figure_ratio",
+													"label": "Ratio",
+													"name": "figure_figure_ratio",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "Leave empty for the default 16:10. Ignored for a logo card.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"tall": "Tall (4:5)",
+														"wide": "Wide (21:9)"
+													},
+													"default_value": "",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 1,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_figure_figure_fit",
+													"label": "Fit",
+													"name": "figure_figure_fit",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "How the image meets its frame. Cover crops it to fill the frame. Contain fits the whole image inside it, which keeps titles and edges readable on document thumbnails.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "33",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"cover": "Cover (crop to fill)",
+														"contain": "Contain (fit whole image)"
+													},
+													"default_value": "cover",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												},
+												{
+													"key": "field_verquin_figure_figure_placeholder",
+													"label": "Image description",
+													"name": "figure_figure_placeholder",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "What the image shows, in a few words. Used as the image's alt text, and shown in the placeholder until the image arrives. Alt text set on the image in the Media Library wins over this.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_figure_figure_caption",
+													"label": "Caption",
+													"name": "figure_figure_caption",
+													"aria-label": "",
+													"type": "textarea",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "70",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"rows": 2,
+													"placeholder": "",
+													"new_lines": ""
+												},
+												{
+													"key": "field_verquin_figure_figure_credit",
+													"label": "Credit",
+													"name": "figure_figure_credit",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "30",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_callout": {
+									"key": "layout_verquin_row_callout",
+									"name": "callout",
+									"label": "Callout",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_callout_html",
+											"label": "Text",
+											"name": "callout_html",
+											"aria-label": "",
+											"type": "wysiwyg",
+											"instructions": "Paragraphs, bold, italic and links.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"tabs": "visual",
+											"toolbar": "basic",
+											"media_upload": 0,
+											"delay": 0
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_links": {
+									"key": "layout_verquin_row_links",
+									"name": "links",
+									"label": "Links",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_links_item",
+											"label": "Links",
+											"name": "links_item",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "table",
+											"min": 1,
+											"max": 0,
+											"button_label": "Add link",
+											"sub_fields": [
+												{
+													"key": "field_verquin_links_item_link",
+													"label": "Link",
+													"name": "links_item_link",
+													"aria-label": "",
+													"type": "link",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "75",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "array"
+												},
+												{
+													"key": "field_verquin_links_item_external",
+													"label": "New tab",
+													"name": "links_item_external",
+													"aria-label": "",
+													"type": "true_false",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "25",
+														"class": "",
+														"id": ""
+													},
+													"message": "",
+													"default_value": 0,
+													"ui": 1,
+													"ui_on_text": "",
+													"ui_off_text": ""
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_text": {
+									"key": "layout_verquin_row_text",
+									"name": "text",
+									"label": "Text",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_text_style",
+											"label": "Size",
+											"name": "text_style",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"lede": "Lede",
+												"body": "Body",
+												"small": "Small"
+											},
+											"default_value": "body",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 0,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_text_html",
+											"label": "Text",
+											"name": "text_html",
+											"aria-label": "",
+											"type": "wysiwyg",
+											"instructions": "Paragraphs, bold, italic and links.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"tabs": "visual",
+											"toolbar": "basic",
+											"media_upload": 0,
+											"delay": 0
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_buttons": {
+									"key": "layout_verquin_row_buttons",
+									"name": "buttons",
+									"label": "Buttons",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_buttons_button",
+											"label": "Buttons",
+											"name": "buttons_button",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "table",
+											"min": 1,
+											"max": 2,
+											"button_label": "Add button",
+											"sub_fields": [
+												{
+													"key": "field_verquin_buttons_button_link",
+													"label": "Link",
+													"name": "buttons_button_link",
+													"aria-label": "",
+													"type": "link",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "80",
+														"class": "",
+														"id": ""
+													},
+													"return_format": "array"
+												},
+												{
+													"key": "field_verquin_buttons_button_style",
+													"label": "Style",
+													"name": "buttons_button_style",
+													"aria-label": "",
+													"type": "select",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "20",
+														"class": "",
+														"id": ""
+													},
+													"choices": {
+														"solid": "Solid",
+														"ghost": "Ghost"
+													},
+													"default_value": "solid",
+													"return_format": "value",
+													"multiple": 0,
+													"allow_null": 0,
+													"ui": 0,
+													"ajax": 0,
+													"placeholder": ""
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_pending": {
+									"key": "layout_verquin_row_pending",
+									"name": "pending",
+									"label": "Pending copy",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_pending_note",
+											"label": "Note",
+											"name": "pending_note",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "Leave empty for \"Copy to be supplied.\"",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_timeline": {
+									"key": "layout_verquin_row_timeline",
+									"name": "timeline",
+									"label": "Timeline",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_timeline_event",
+											"label": "Events",
+											"name": "timeline_event",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "In the order they should appear.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 1,
+											"max": 0,
+											"button_label": "Add event",
+											"sub_fields": [
+												{
+													"key": "field_verquin_timeline_event_year",
+													"label": "Year",
+													"name": "timeline_event_year",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Required. Shown on the marker, e.g. 1988.",
+													"required": 1,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "25",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_timeline_event_heading",
+													"label": "Heading",
+													"name": "timeline_event_heading",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "75",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_timeline_event_body",
+													"label": "Body",
+													"name": "timeline_event_body",
+													"aria-label": "",
+													"type": "wysiwyg",
+													"instructions": "Paragraphs, bold, italic and links.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"tabs": "visual",
+													"toolbar": "basic",
+													"media_upload": 0,
+													"delay": 0
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_references": {
+									"key": "layout_verquin_row_references",
+									"name": "references",
+									"label": "References",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_references_group",
+											"label": "Groups",
+											"name": "references_group",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "One numbered list per subject heading.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 1,
+											"max": 0,
+											"button_label": "Add group",
+											"sub_fields": [
+												{
+													"key": "field_verquin_references_group_heading",
+													"label": "Heading",
+													"name": "references_group_heading",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_references_group_item",
+													"label": "Entries",
+													"name": "references_group_item",
+													"aria-label": "",
+													"type": "repeater",
+													"instructions": "",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "row",
+													"min": 1,
+													"max": 0,
+													"button_label": "Add entry",
+													"sub_fields": [
+														{
+															"key": "field_verquin_references_group_item_text",
+															"label": "Citation",
+															"name": "references_group_item_text",
+															"aria-label": "",
+															"type": "textarea",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"rows": 3,
+															"placeholder": "",
+															"new_lines": ""
+														}
+													]
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_faq": {
+									"key": "layout_verquin_row_faq",
+									"name": "faq",
+									"label": "FAQ",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_faq_item",
+											"label": "Questions",
+											"name": "faq_item",
+											"aria-label": "",
+											"type": "repeater",
+											"instructions": "One group of questions. The framework splits its ten across four bands.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"layout": "block",
+											"min": 1,
+											"max": 0,
+											"button_label": "Add question",
+											"sub_fields": [
+												{
+													"key": "field_verquin_faq_item_question",
+													"label": "Question",
+													"name": "faq_item_question",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Required.",
+													"required": 1,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_faq_item_verdict",
+													"label": "Verdict",
+													"name": "faq_item_verdict",
+													"aria-label": "",
+													"type": "text",
+													"instructions": "Short lead answer, e.g. Yes. / No. / Usually.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"maxlength": "",
+													"placeholder": "",
+													"prepend": "",
+													"append": ""
+												},
+												{
+													"key": "field_verquin_faq_item_answer",
+													"label": "Answer",
+													"name": "faq_item_answer",
+													"aria-label": "",
+													"type": "wysiwyg",
+													"instructions": "Paragraphs, bold, italic and links.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"tabs": "visual",
+													"toolbar": "basic",
+													"media_upload": 0,
+													"delay": 0
+												},
+												{
+													"key": "field_verquin_faq_item_table",
+													"label": "Table",
+													"name": "faq_item_table",
+													"aria-label": "",
+													"type": "group",
+													"instructions": "Optional specification table, shown after the answer.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "block",
+													"sub_fields": [
+														{
+															"key": "field_verquin_faq_item_table_caption",
+															"label": "Caption",
+															"name": "faq_item_table_caption",
+															"aria-label": "",
+															"type": "text",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "",
+																"class": "",
+																"id": ""
+															},
+															"default_value": "",
+															"maxlength": "",
+															"placeholder": "",
+															"prepend": "",
+															"append": ""
+														},
+														{
+															"key": "field_verquin_faq_item_table_rows",
+															"label": "Rows",
+															"name": "faq_item_table_rows",
+															"aria-label": "",
+															"type": "repeater",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "",
+																"class": "",
+																"id": ""
+															},
+															"layout": "table",
+															"min": 0,
+															"max": 0,
+															"button_label": "Add row",
+															"sub_fields": [
+																{
+																	"key": "field_verquin_faq_item_table_rows_label",
+																	"label": "Label",
+																	"name": "faq_item_table_rows_label",
+																	"aria-label": "",
+																	"type": "text",
+																	"instructions": "",
+																	"required": 0,
+																	"conditional_logic": 0,
+																	"wrapper": {
+																		"width": "40",
+																		"class": "",
+																		"id": ""
+																	},
+																	"default_value": "",
+																	"maxlength": "",
+																	"placeholder": "",
+																	"prepend": "",
+																	"append": ""
+																},
+																{
+																	"key": "field_verquin_faq_item_table_rows_value",
+																	"label": "Value",
+																	"name": "faq_item_table_rows_value",
+																	"aria-label": "",
+																	"type": "text",
+																	"instructions": "",
+																	"required": 0,
+																	"conditional_logic": 0,
+																	"wrapper": {
+																		"width": "60",
+																		"class": "",
+																		"id": ""
+																	},
+																	"default_value": "",
+																	"maxlength": "",
+																	"placeholder": "",
+																	"prepend": "",
+																	"append": ""
+																}
+															]
+														}
+													]
+												},
+												{
+													"key": "field_verquin_faq_item_callout",
+													"label": "Callout",
+													"name": "faq_item_callout",
+													"aria-label": "",
+													"type": "wysiwyg",
+													"instructions": "Optional emphasised note, shown after the table.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"tabs": "visual",
+													"toolbar": "basic",
+													"media_upload": 0,
+													"delay": 0
+												},
+												{
+													"key": "field_verquin_faq_item_closing",
+													"label": "Closing text",
+													"name": "faq_item_closing",
+													"aria-label": "",
+													"type": "wysiwyg",
+													"instructions": "Optional paragraph after the callout.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"default_value": "",
+													"tabs": "visual",
+													"toolbar": "basic",
+													"media_upload": 0,
+													"delay": 0
+												},
+												{
+													"key": "field_verquin_faq_item_link",
+													"label": "Links",
+													"name": "faq_item_link",
+													"aria-label": "",
+													"type": "repeater",
+													"instructions": "Optional related links, shown last.",
+													"required": 0,
+													"conditional_logic": 0,
+													"wrapper": {
+														"width": "",
+														"class": "",
+														"id": ""
+													},
+													"layout": "table",
+													"min": 0,
+													"max": 0,
+													"button_label": "Add link",
+													"sub_fields": [
+														{
+															"key": "field_verquin_faq_item_link_link",
+															"label": "Link",
+															"name": "faq_item_link_link",
+															"aria-label": "",
+															"type": "link",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "75",
+																"class": "",
+																"id": ""
+															},
+															"return_format": "array"
+														},
+														{
+															"key": "field_verquin_faq_item_link_external",
+															"label": "New tab",
+															"name": "faq_item_link_external",
+															"aria-label": "",
+															"type": "true_false",
+															"instructions": "",
+															"required": 0,
+															"conditional_logic": 0,
+															"wrapper": {
+																"width": "25",
+																"class": "",
+																"id": ""
+															},
+															"message": "",
+															"default_value": 0,
+															"ui": 1,
+															"ui_on_text": "",
+															"ui_off_text": ""
+														}
+													]
+												}
+											]
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_diagram": {
+									"key": "layout_verquin_row_diagram",
+									"name": "diagram",
+									"label": "Diagram",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_diagram_diagram",
+											"label": "Diagram",
+											"name": "diagram_diagram",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "Diagrams ship with the theme. The choices come from verquin_diagrams() in inc\/blocks\/diagram.php; this stored list is a fallback only.",
+											"required": 1,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"monument-comparison": "Monument depth comparison",
+												"monument-ddbm": "Deep-drilled braced monument",
+												"monument-sdbm": "Short-drilled braced monument",
+												"monument-svbm": "Short-driven braced monument",
+												"quincunx": "Quincunx geometry"
+											},
+											"default_value": "",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 1,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_diagram_caption",
+											"label": "Caption",
+											"name": "diagram_caption",
+											"aria-label": "",
+											"type": "textarea",
+											"instructions": "The diagram carries its own accessible description; this is the visible caption.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "70",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"rows": 2,
+											"placeholder": "",
+											"new_lines": ""
+										},
+										{
+											"key": "field_verquin_diagram_credit",
+											"label": "Credit",
+											"name": "diagram_credit",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "30",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_video": {
+									"key": "layout_verquin_row_video",
+									"name": "video",
+									"label": "Video",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_video_url",
+											"label": "YouTube URL",
+											"name": "video_url",
+											"aria-label": "",
+											"type": "url",
+											"instructions": "Watch, share, embed or shorts link. Leave empty to show a labelled placeholder.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "70",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_video_ratio",
+											"label": "Ratio",
+											"name": "video_ratio",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "Leave empty for the default 16:9.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "30",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"tall": "Tall (4:5)",
+												"wide": "Wide (21:9)"
+											},
+											"default_value": "",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 1,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_video_slot",
+											"label": "Slot code",
+											"name": "video_slot",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "From the photo-slot sheet, e.g. DDBM-03. Used by the placeholder until the video is supplied.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "34",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										},
+										{
+											"key": "field_verquin_video_placeholder",
+											"label": "Placeholder description",
+											"name": "video_placeholder",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "Shown in the placeholder while the video is missing.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "66",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										},
+										{
+											"key": "field_verquin_video_caption",
+											"label": "Caption",
+											"name": "video_caption",
+											"aria-label": "",
+											"type": "textarea",
+											"instructions": "Also supplies the embed's accessible name.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "70",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"rows": 2,
+											"placeholder": "",
+											"new_lines": ""
+										},
+										{
+											"key": "field_verquin_video_credit",
+											"label": "Credit",
+											"name": "video_credit",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "30",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										}
+									],
+									"min": "",
+									"max": ""
+								},
+								"layout_verquin_row_data_chart": {
+									"key": "layout_verquin_row_data_chart",
+									"name": "data-chart",
+									"label": "Data chart",
+									"display": "block",
+									"sub_fields": [
+										{
+											"key": "field_verquin_data_chart_station",
+											"label": "Station",
+											"name": "data_chart_station",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "The choices come from verquin_charts() in inc\/charts.php; this stored list is a fallback only. Data is read from uploads\/data\/<station>\/.",
+											"required": 1,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "50",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"XXXX1": "Station XXXX1",
+												"XXXX2": "Station XXXX2",
+												"XXXX3": "Station XXXX3",
+												"XXXX4": "Station XXXX4",
+												"XXXX5": "Station XXXX5",
+												"XXXX6": "Station XXXX6",
+												"XXXX7": "Station XXXX7",
+												"XXXX8": "Station XXXX8"
+											},
+											"default_value": "",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 1,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_data_chart_kind",
+											"label": "Chart",
+											"name": "data_chart_kind",
+											"aria-label": "",
+											"type": "select",
+											"instructions": "Not every station has both. A combination with no data renders nothing.",
+											"required": 1,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "50",
+												"class": "",
+												"id": ""
+											},
+											"choices": {
+												"positions": "Position time series",
+												"qc": "QC parameters"
+											},
+											"default_value": "positions",
+											"return_format": "value",
+											"multiple": 0,
+											"allow_null": 0,
+											"ui": 0,
+											"ajax": 0,
+											"placeholder": ""
+										},
+										{
+											"key": "field_verquin_data_chart_title",
+											"label": "Title",
+											"name": "data_chart_title",
+											"aria-label": "",
+											"type": "text",
+											"instructions": "Shown above the chart. Empty uses the station's registered name.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "70",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"maxlength": "",
+											"placeholder": "",
+											"prepend": "",
+											"append": ""
+										},
+										{
+											"key": "field_verquin_data_chart_error_bars",
+											"label": "Error bars",
+											"name": "data_chart_error_bars",
+											"aria-label": "",
+											"type": "true_false",
+											"instructions": "Position charts only.",
+											"required": 0,
+											"conditional_logic": [
+												[
+													{
+														"field": "field_verquin_data_chart_kind",
+														"operator": "==",
+														"value": "positions"
+													}
+												]
+											],
+											"wrapper": {
+												"width": "30",
+												"class": "",
+												"id": ""
+											},
+											"message": "",
+											"default_value": 0,
+											"ui": 1,
+											"ui_on_text": "",
+											"ui_off_text": ""
+										},
+										{
+											"key": "field_verquin_data_chart_footer",
+											"label": "Explanation",
+											"name": "data_chart_footer",
+											"aria-label": "",
+											"type": "wysiwyg",
+											"instructions": "Shown under the chart, as on the legacy pages.",
+											"required": 0,
+											"conditional_logic": 0,
+											"wrapper": {
+												"width": "",
+												"class": "",
+												"id": ""
+											},
+											"default_value": "",
+											"tabs": "visual",
+											"toolbar": "basic",
+											"media_upload": 0,
+											"delay": 0
+										}
+									],
+									"min": "",
+									"max": ""
+								}
+							},
+							"min": "",
+							"max": "",
+							"button_label": "Add row"
+						}
+					],
+					"min": "",
+					"max": ""
+				},
+				"layout_verquin_form": {
+					"key": "layout_verquin_form",
+					"name": "form",
+					"label": "Form",
+					"display": "block",
+					"sub_fields": [
+						{
+							"key": "field_verquin_form_eyebrow",
+							"label": "Eyebrow",
+							"name": "form_eyebrow",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_verquin_form_anchor",
+							"label": "Anchor id",
+							"name": "form_anchor",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "Optional, for in-page links, e.g. inquiry.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "50",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_verquin_form_heading",
+							"label": "Heading",
+							"name": "form_heading",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "&lt;br&gt; and &lt;em&gt; are allowed.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": ""
+						},
+						{
+							"key": "field_verquin_form_lede",
+							"label": "Lede",
+							"name": "form_lede",
+							"aria-label": "",
+							"type": "textarea",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"maxlength": "",
+							"rows": 3,
+							"placeholder": "",
+							"new_lines": ""
+						},
+						{
+							"key": "field_verquin_form_id",
+							"label": "Form",
+							"name": "form_id",
+							"aria-label": "",
+							"type": "select",
+							"instructions": "The forms defined in Contact Form 7. The list is read live; nothing is stored in the field definition.",
+							"required": 1,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "70",
+								"class": "",
+								"id": ""
+							},
+							"choices": [],
+							"default_value": "",
+							"return_format": "value",
+							"multiple": 0,
+							"allow_null": 1,
+							"ui": 0,
+							"ajax": 0,
+							"placeholder": ""
+						},
+						{
+							"key": "field_verquin_form_wide",
+							"label": "Wide",
+							"name": "form_wide",
+							"aria-label": "",
+							"type": "true_false",
+							"instructions": "Widen the column for long questionnaires.",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "30",
+								"class": "",
+								"id": ""
+							},
+							"message": "",
+							"default_value": 0,
+							"ui": 1,
+							"ui_on_text": "",
+							"ui_off_text": ""
+						}
+					],
+					"min": "",
+					"max": ""
+				}
+			},
+			"min": "",
+			"max": "",
+			"button_label": "Add section"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "page"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": [
+		"the_content"
+	],
+	"active": true,
+	"description": "Flexible Content composition for pages. Row layouts are added by their roadmap steps.",
+	"show_in_rest": 0,
+	"modified": 1791974426
+}

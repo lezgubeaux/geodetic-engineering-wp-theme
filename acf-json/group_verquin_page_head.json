@@ -1,0 +1,168 @@
+{
+	"key": "group_verquin_page_head",
+	"title": "Page head",
+	"fields": [
+		{
+			"key": "field_verquin_page_head_eyebrow",
+			"label": "Eyebrow",
+			"name": "page_head_eyebrow",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "Small label above the heading.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_page_head_heading",
+			"label": "Heading",
+			"name": "page_head_heading",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "The page's h1. Leave empty to use the page title. &lt;br&gt; and &lt;em&gt; are allowed.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_verquin_page_head_lede",
+			"label": "Lede",
+			"name": "page_head_lede",
+			"aria-label": "",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"rows": 4,
+			"placeholder": "",
+			"new_lines": ""
+		},
+		{
+			"key": "field_verquin_page_head_tall",
+			"label": "Tall",
+			"name": "page_head_tall",
+			"aria-label": "",
+			"type": "true_false",
+			"instructions": "Full-height hero treatment. Used by the front page only.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 0,
+			"ui": 1,
+			"ui_on_text": "",
+			"ui_off_text": ""
+		},
+		{
+			"key": "field_verquin_page_head_buttons",
+			"label": "Buttons",
+			"name": "page_head_buttons",
+			"aria-label": "",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "table",
+			"min": 0,
+			"max": 2,
+			"button_label": "Add button",
+			"sub_fields": [
+				{
+					"key": "field_verquin_page_head_buttons_link",
+					"label": "Link",
+					"name": "page_head_buttons_link",
+					"aria-label": "",
+					"type": "link",
+					"instructions": "Search for a page, or paste a URL, mailto: or tel: link. The link text becomes the button label.",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "80",
+						"class": "",
+						"id": ""
+					},
+					"return_format": "array"
+				},
+				{
+					"key": "field_verquin_page_head_buttons_style",
+					"label": "Style",
+					"name": "page_head_buttons_style",
+					"aria-label": "",
+					"type": "select",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "20",
+						"class": "",
+						"id": ""
+					},
+					"choices": {
+						"solid": "Solid",
+						"ghost": "Ghost"
+					},
+					"default_value": "solid",
+					"return_format": "value",
+					"multiple": 0,
+					"allow_null": 0,
+					"ui": 0,
+					"ajax": 0,
+					"placeholder": ""
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "page"
+			}
+		]
+	],
+	"menu_order": -10,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "The page opener. Rendered by the template before the page sections, so it is always present and always first. The breadcrumb is derived from the parent page.",
+	"show_in_rest": 0,
+	"modified": 1790553600
+}

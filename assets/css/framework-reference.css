@@ -1,0 +1,107 @@
+/* VerQuin 2026 — framework reference stylesheet (TEMPORARY)
+   Untouched supplied CSS for components not yet migrated into theme.css.
+   Migrated so far (removed from this file): tokens, base, type scale, shell,
+   nav + dropdowns, buttons, page head, breadcrumb, block, cards, figures,
+   callout, asset badge, spec tables (incl. the FAQ compact variant), links,
+   pending-copy marker, form controls, selects and choices, CTA band, site footer.
+   Dequeued at CSS close-out. */
+
+/* ---------- GALLERY ---------- */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
+
+/* ---------- TIMELINE ---------- */
+.tl{border-left:1px solid var(--hair);padding-left:30px;margin-top:44px}
+.tl .ev{position:relative;padding-bottom:44px}
+.tl .ev::before{
+  content:"";position:absolute;left:-35px;top:9px;width:9px;height:9px;
+  background:var(--vq-summer);border-radius:50%;
+}
+.tl .yr{
+  font-family:var(--f-m);font-size:12px;color:var(--vq-summer);
+  letter-spacing:.12em;display:block;margin-bottom:7px;
+}
+.tl p{font-size:14.5px;color:var(--muted);margin:0 0 .9em}
+
+/* ---------- REFERENCES ---------- */
+ol.refs{list-style:none;padding:0;margin:26px 0 0;max-width:90ch}
+ol.refs li{
+  font-family:var(--f-m);font-size:12px;line-height:1.7;color:var(--muted-dark);
+  padding-left:2em;text-indent:-2em;margin-bottom:16px;
+}
+
+/* ---------- LOGO ---------- */
+.logocard{background:#fff;padding:32px;display:flex;align-items:center;
+  justify-content:center;border:1px solid var(--hair)}
+.logocard img{max-height:140px;width:auto}
+
+/* ---------- CHILD PAGE INDEX ---------- */
+.children{
+  display:flex;flex-wrap:wrap;
+  gap:1px;background:var(--hair);border:1px solid var(--hair);margin-top:44px;
+}
+.children a{flex:1 1 250px}
+.children a{
+  background:var(--vq-midnight);padding:28px;text-decoration:none;
+  display:block;transition:.2s;color:var(--paper);
+}
+.children a:hover{background:#071033}
+.children .idx{
+  font-family:var(--f-m);font-size:10.5px;color:var(--vq-ocean);
+  letter-spacing:.16em;display:block;margin-bottom:14px;text-transform:uppercase;
+}
+.children h3{font-size:19px;margin-bottom:8px}
+.children p{font-size:14px;color:var(--muted);margin:0}
+
+/* ---------- FINE PRINT ---------- */
+.cap{font-family:var(--f-m);font-size:11.5px;line-height:1.55;color:var(--muted-dark);max-width:var(--measure)}
+
+/* ---------- ACCORDION ---------- */
+.faq{border-top:1px solid var(--hair);margin-top:32px}
+.faq details{border-bottom:1px solid var(--hair)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;
+  font-family:var(--f-d);font-size:clamp(16px,1.7vw,19px);font-weight:600;
+  line-height:1.35;letter-spacing:-.01em;color:var(--paper);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  font-family:var(--f-m);font-size:20px;font-weight:400;color:var(--vq-summer);
+  transition:transform .18s;
+}
+.faq details[open] summary::after{content:"\\2212"}
+.faq summary:hover{color:var(--vq-summer)}
+.faq .ans{padding:0 44px 26px 0;max-width:var(--measure)}
+.faq .ans p{font-size:15px;line-height:1.65;color:var(--muted)}
+.faq .ans p:last-child{margin-bottom:0}
+
+
+/* ---------- ACCORDION: RICH ANSWERS ---------- */
+.faq .ans{max-width:74ch}
+.faq .ans .verdict{
+  font-family:var(--f-d);font-size:17px;font-weight:700;color:var(--paper);
+  margin-bottom:12px;letter-spacing:-.01em;
+}
+.faq .ans .callout{margin:20px 0 4px;padding:16px 20px}
+.faq .ans .links{margin-top:20px}
+
+/* ---------- DIAGRAMS ---------- */
+.diagram{
+  border:1px solid var(--hair);background:linear-gradient(180deg,#050d24,#03020D);
+  padding:clamp(18px,3vw,34px);margin-top:44px;
+}
+.diagram svg{width:100%;height:auto;display:block}
+.diagram figcaption{margin-top:18px}
+.dg-label{font-family:var(--f-m);font-size:11px;fill:var(--paper);letter-spacing:.02em}
+.dg-label.sm{font-size:9.5px;fill:var(--muted-dark);letter-spacing:.1em;text-transform:uppercase}
+.dg-label.hi{fill:var(--vq-summer)}
+.dg-num{font-family:var(--f-m);font-size:10px;fill:var(--muted-dark)}
+.dg-grid{stroke:rgba(141,162,188,.13);stroke-width:1}
+.dg-ground{stroke:rgba(141,162,188,.5);stroke-width:1.5}
+.dg-leg{stroke:var(--vq-summer);stroke-width:3;stroke-linecap:round;fill:none}
+.dg-leg-weak{stroke:var(--muted-dark);stroke-width:3;stroke-linecap:round;fill:none}
+.dg-decouple{stroke:var(--vq-ocean);stroke-width:8;stroke-linecap:butt;opacity:.32}
+.dg-mark{fill:var(--vq-summer)}
+.dg-mark-weak{fill:var(--muted-dark)}
+.quincunx{max-width:300px;margin-top:34px}
+.quincunx svg{width:100%;height:auto;display:block}

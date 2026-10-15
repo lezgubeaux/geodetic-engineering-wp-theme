@@ -1,0 +1,2333 @@
+/* ==========================================================================
+   VerQuin — production stylesheet
+   Source: VerQuin 2026 framework (Monumental), migrated component by component.
+   Ownership: globals unprefixed · sections .s-* · blocks .b-* · utilities .u-*
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Tokens
+   -------------------------------------------------------------------------- */
+:root {
+	/* Brand — VerQuin Branding Manual 2021 */
+	--vq-black: #03020d;
+	--vq-midnight: #050a26;
+	--vq-celestial: #033e8c;
+	--vq-ocean: #0367a6;
+	--vq-summer: #048abf;
+
+	/* Neutrals */
+	--paper: #edf1f6;
+	--paper-soft: #c9d6e6;
+	--paper-dim: #b9c8da;
+	--muted: #8da2bc;
+	--muted-dark: #5b6e88; /* strokes and separators only: 3.7:1 on dark, fails AA for text */
+	--hair: rgba(141, 162, 188, 0.2);
+	--surface-hover: #071033;
+	--link: #3fb0e0; /* Summer lightened for text on dark (8.3:1); brand Summer stays for accents */
+	--warn: #ff8f8f; /* validation errors on dark surfaces (8.9:1); no framework equivalent */
+
+	/* Layout */
+	--measure: 64ch;
+	--gut: clamp(20px, 5vw, 64px);
+	--maxw: 1300px;
+	--header-h: 66px;
+
+	/* Rhythm */
+	--space-1: 14px;
+	--space-2: 20px;
+	--space-3: 26px;
+	--space-4: 34px;
+	--space-5: 44px;
+	--space-6: 52px;
+	--space-7: 64px;
+	--section-pad: clamp(72px, 9vw, 132px);
+
+	/* Type — Proxima Nova in production; Figtree stand-in pending licence */
+	--f-d: "Figtree", -apple-system, "Segoe UI", sans-serif;
+	--f-m: "IBM Plex Mono", ui-monospace, monospace;
+
+	/* Motion */
+	--ease: 0.18s;
+
+	/* Breakpoints — documentation only: custom properties cannot be used inside
+	   @media. Mobile-first: base rules are the small-screen state; enhancements live
+	   in the ascending min-width blocks of the Breakpoints section, token named in a comment. */
+	--bp-sm: 621px; /* form two-column rows */
+	--bp-md: 921px; /* two-column rows (text-media) */
+	--bp-lg: 1041px; /* desktop navigation */
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+body {
+	margin: 0;
+	background: var(--vq-black);
+	color: var(--paper);
+	font-family: var(--f-d);
+	font-size: 17px;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--paper);
+}
+
+:focus-visible {
+	outline: 2px solid var(--vq-summer);
+	outline-offset: 3px;
+}
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	left: var(--gut);
+	top: -100px;
+	z-index: 100;
+	padding: 10px 16px;
+	background: var(--vq-ocean);
+	color: #fff;
+	font-family: var(--f-m);
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.skip-link:focus {
+	top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Icons (global)
+   Source: docs/lucide-icon-workflow.md — inline Lucide SVGs via verquin_icon()
+   -------------------------------------------------------------------------- */
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	flex: 0 0 auto;
+	stroke-width: 2;
+}
+
+.icon--small {
+	width: 1rem;
+	height: 1rem;
+}
+
+.icon--light {
+	stroke-width: 1.5;
+}
+
+.icon--strong {
+	stroke-width: 2.5;
+}
+
+/* --------------------------------------------------------------------------
+   Type scale
+   -------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--f-d);
+	margin: 0 0 0.5em;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: clamp(42px, 7.5vw, 96px);
+	font-weight: 900;
+	line-height: 0.94;
+	letter-spacing: -0.035em;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: clamp(30px, 5vw, 62px);
+	font-weight: 900;
+	line-height: 0.98;
+	letter-spacing: -0.03em;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: clamp(19px, 2.1vw, 26px);
+	font-weight: 700;
+	line-height: 1.22;
+	letter-spacing: -0.012em;
+}
+
+h4 {
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: -0.005em;
+}
+
+p {
+	margin: 0 0 1.1em;
+	max-width: var(--measure);
+}
+
+strong {
+	color: #fff;
+	font-weight: 600;
+}
+
+.eyebrow {
+	display: block;
+	margin: 0 0 var(--space-2);
+	font-family: var(--f-m);
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--vq-summer);
+}
+
+.sublabel {
+	display: block;
+	margin: 0 0 10px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--vq-summer);
+}
+
+.lede {
+	font-size: clamp(18px, 1.9vw, 22px);
+	line-height: 1.55;
+	font-weight: 300;
+	color: var(--paper-soft);
+}
+
+.small {
+	font-size: 14.5px;
+	line-height: 1.62;
+	color: var(--muted);
+}
+
+.data {
+	font-family: var(--f-m);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Captions are global, as in the framework: figure, diagram and video share one
+   treatment, and each block sets only its own top gap. Colour is --muted, not
+   the framework's --muted-dark, which fails AA as text. */
+figcaption {
+	max-width: 62ch;
+	margin-top: 11px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	line-height: 1.55;
+	color: var(--muted);
+}
+
+figcaption em {
+	font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   Shell
+   -------------------------------------------------------------------------- */
+.wrap {
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding-inline: var(--gut);
+}
+
+/* Every section is a band; adjacent bands are separated by a hairline. */
+main > [class^="s-"],
+main > [class*=" s-"] {
+	position: relative;
+	padding-block: var(--section-pad);
+}
+
+main > [class^="s-"] + [class^="s-"],
+main > [class*=" s-"] + [class*=" s-"] {
+	border-top: 1px solid var(--hair);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons (global)
+   -------------------------------------------------------------------------- */
+.btn {
+	display: inline-block;
+	padding: 12px 22px;
+	border-radius: 2px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: var(--ease);
+}
+
+.btn--solid {
+	background: var(--vq-ocean);
+	color: #fff;
+}
+
+.btn--solid:hover {
+	background: var(--vq-celestial);
+}
+
+.btn--ghost {
+	border: 1px solid var(--hair);
+	color: var(--paper);
+}
+
+.btn--ghost:hover {
+	border-color: var(--vq-summer);
+	color: var(--vq-summer);
+}
+
+/* --------------------------------------------------------------------------
+   Site header (global shell)
+   Source: nav.site
+   -------------------------------------------------------------------------- */
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 80;
+	background: rgba(5, 10, 38, 0.9);
+	backdrop-filter: blur(14px);
+	border-bottom: 1px solid var(--hair);
+}
+
+.site-header__row {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	height: var(--header-h);
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding-inline: var(--gut);
+}
+
+/* Base = small screens: nav (menu + CTA) is a panel under the bar, opened by the toggle.
+   Desktop row layout is added at --bp-lg. */
+.site-header__nav {
+	display: none;
+	position: absolute;
+	top: var(--header-h);
+	left: 0;
+	right: 0;
+	max-height: calc(100vh - var(--header-h));
+	max-height: calc(100dvh - var(--header-h));
+	overflow-y: auto;
+	padding: 8px var(--gut) 24px;
+	background: var(--vq-midnight);
+	border-bottom: 1px solid var(--hair);
+}
+
+.site-header--open .site-header__nav {
+	display: block;
+}
+
+.site-header--nav-open {
+	overflow: hidden;
+}
+
+.site-header__cta {
+	margin-top: 20px;
+}
+
+.brandmark {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	color: var(--paper);
+	text-decoration: none;
+}
+
+.brandmark__logo {
+	display: block;
+	height: 23px;
+	width: auto;
+}
+
+.brandmark__wordmark {
+	font-family: var(--f-d);
+	font-weight: 800;
+	font-size: 20px;
+	letter-spacing: 0.16em;
+}
+
+.brandmark__wordmark span {
+	/* 3.4:1 — passes only as large text (20px/800); fallback when no logo is set */
+	color: var(--vq-ocean);
+}
+
+.brandmark__sub {
+	font-family: var(--f-m);
+	font-size: 11px;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+/* Mobile toggle; behaviour in assets/js/theme.js. Bars fold into an X when expanded. */
+.site-header__toggle {
+	display: block;
+	margin-left: auto;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	border: 1px solid var(--hair);
+	border-radius: 2px;
+	background: transparent;
+	cursor: pointer;
+}
+
+.site-header__toggle-bar,
+.site-header__toggle-bar::before,
+.site-header__toggle-bar::after {
+	display: block;
+	width: 18px;
+	height: 1.5px;
+	margin: 0 auto;
+	background: var(--paper);
+	content: "";
+}
+
+.site-header__toggle-bar {
+	position: relative;
+	transition: background 0.2s ease;
+}
+
+.site-header__toggle-bar::before,
+.site-header__toggle-bar::after {
+	position: absolute;
+	left: 0;
+	transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.site-header__toggle-bar::before {
+	top: -6px;
+}
+
+.site-header__toggle-bar::after {
+	top: 6px;
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-bar {
+	background: transparent;
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-bar::before {
+	top: 0;
+	transform: rotate(45deg);
+}
+
+.site-header__toggle[aria-expanded="true"] .site-header__toggle-bar::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   CTA band (global)
+   Source: section.cta
+   Renders above the footer on every page from the ACF Options page.
+   -------------------------------------------------------------------------- */
+.cta-band {
+	background: linear-gradient(120deg, var(--vq-celestial), var(--vq-ocean));
+	border-block: 1px solid var(--hair);
+	padding-block: var(--section-pad);
+}
+
+.cta-band .eyebrow {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.cta-band .lede {
+	color: rgba(255, 255, 255, 0.92);
+}
+
+/* Absorbs the framework's inline button overrides: the default solid and ghost
+   buttons have too little contrast against the gradient. */
+.cta-band .btn--solid {
+	background: #fff;
+	color: var(--vq-celestial);
+}
+
+.cta-band .btn--solid:hover {
+	background: var(--paper);
+}
+
+.cta-band .btn--ghost {
+	border-color: rgba(255, 255, 255, 0.45);
+	color: #fff;
+}
+
+.cta-band .btn--ghost:hover {
+	border-color: #fff;
+	color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Site footer (global)
+   Source: footer > .cols / h4 / ul / .fine
+   Base = two columns; the framework's four-column grid returns at --bp-md.
+   -------------------------------------------------------------------------- */
+.site-footer {
+	background: var(--vq-midnight);
+	border-top: 1px solid var(--hair);
+	padding-block: var(--space-6);
+}
+
+.site-footer__cols {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--space-4);
+}
+
+.site-footer__tagline {
+	margin-top: var(--space-1);
+	font-size: 14px;
+	color: var(--muted);
+}
+
+/* Framework uses --muted-dark here; that fails AA as text, so headings and the
+   fine print use --muted. */
+.site-footer__heading {
+	margin-bottom: var(--space-1);
+	font-family: var(--f-m);
+	font-size: 10px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.site-footer__fine {
+	margin-top: var(--space-5);
+	font-family: var(--f-m);
+	font-size: 11.5px;
+	line-height: 1.8;
+	color: var(--muted);
+}
+
+.site-footer__fine + .site-footer__fine {
+	margin-top: var(--space-1);
+}
+
+.site-footer__fine a {
+	color: var(--link);
+}
+
+/* The fine line is several values joined by " · ", so the only break points
+   should be the separators. A phone number holds together; an address line stays
+   breakable, because one long enough to exceed the viewport would overflow rather
+   than wrap and take the page's horizontal scroll with it. */
+.site-footer__fine-item--nowrap {
+	white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Block: menu
+   Source: nav.site ul / li.has-sub / a.lnk
+   -------------------------------------------------------------------------- */
+/* Base = small screens: stacked list inside the header panel; submenus are accordions
+   opened by .b-menu__toggle. Desktop row + hover dropdown is added at --bp-lg. */
+.b-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.b-menu__item {
+	position: relative;
+	border-bottom: 1px solid var(--hair);
+}
+
+.b-menu__link {
+	display: block;
+	padding: 14px 0;
+	border-bottom: 1.5px solid transparent;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--paper-dim);
+}
+
+.b-menu__item--has-sub > .b-menu__link {
+	padding-right: 48px;
+}
+
+.b-menu__link:hover,
+.b-menu__link[aria-current="page"] {
+	color: #fff;
+	border-color: var(--vq-summer);
+}
+
+/* Plain variant: a flat list of ordinary links, used by the site footer. Resets the
+   header's mono uppercase type, link padding, and item hairlines. Framework source:
+   footer ul / li / a. */
+.b-menu--plain .b-menu__item {
+	margin-bottom: 8px;
+	border-bottom: 0;
+}
+
+.b-menu--plain .b-menu__link {
+	padding: 0;
+	border-bottom: 0;
+	font-family: var(--f-d);
+	font-size: 14px;
+	letter-spacing: normal;
+	text-transform: none;
+	color: var(--paper-dim);
+}
+
+/* The current page is not marked in the footer: the framework does not mark it, the
+   header already does, and colour alone would be the only cue. aria-current stays in
+   the markup, so assistive technology still announces it. */
+.b-menu--plain .b-menu__link[aria-current="page"] {
+	border-color: transparent;
+	color: var(--paper-dim);
+}
+
+.b-menu--plain .b-menu__link:hover {
+	border-color: transparent;
+	color: var(--link);
+}
+
+/* Submenu toggle: keyboard/touch control for the dropdown; chevron flips when expanded. */
+.b-menu__toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--paper-dim);
+	cursor: pointer;
+}
+
+.b-menu__toggle:hover {
+	color: #fff;
+}
+
+.b-menu__toggle .icon {
+	transition: transform 0.2s ease;
+}
+
+.b-menu__toggle[aria-expanded="true"] .icon {
+	transform: rotate(180deg);
+}
+
+.b-menu__sub {
+	display: none;
+	flex-direction: column;
+	margin: 0 0 8px;
+	padding: 0 0 0 16px;
+	list-style: none;
+}
+
+.b-menu__item--open > .b-menu__sub {
+	display: flex;
+}
+
+.b-menu__sub .b-menu__item {
+	border-bottom: 0;
+}
+
+.b-menu__sub .b-menu__link {
+	padding: 9px 0;
+	border: 0;
+	font-size: 12px;
+	letter-spacing: 0.12em;
+}
+
+.b-menu__sub .b-menu__link:hover {
+	color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Block: buttons
+   Source: .acts
+   -------------------------------------------------------------------------- */
+.b-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 32px;
+}
+
+/* --------------------------------------------------------------------------
+   Block: callout
+   Source: .callout
+   -------------------------------------------------------------------------- */
+.b-callout {
+	max-width: var(--measure);
+	margin-top: 30px;
+	padding: 22px 26px;
+	border: 1px solid var(--hair);
+	border-left: 3px solid var(--vq-ocean);
+	background: rgba(3, 62, 140, 0.12);
+}
+
+.b-callout p {
+	font-size: 14.5px;
+	line-height: 1.62;
+	color: var(--paper);
+}
+
+.b-callout p:last-child {
+	margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Block: figure
+   Source: figure / .ph / figcaption
+   -------------------------------------------------------------------------- */
+.b-figure {
+	margin: 0;
+}
+
+/* No ratio chosen: the image keeps its own proportions. */
+.b-figure__media {
+	position: relative;
+	border: 1px solid var(--hair);
+	overflow: hidden;
+}
+
+.b-figure__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* The placeholder has no intrinsic size, so it always needs a frame. */
+.b-figure__media--placeholder {
+	aspect-ratio: 16 / 10;
+}
+
+/* A chosen ratio sets the frame and crops the image to fill it, unless the figure
+   asks to fit instead. --fig-fit inherits, so --contain reaches every framed case
+   below without competing on specificity. Where the 16:10 is not chosen but
+   imposed — a cards tile or a gallery cell — --contain drops that frame instead,
+   under those blocks' own banners. */
+.b-figure--contain {
+	--fig-fit: contain;
+}
+
+.b-figure--standard .b-figure__media {
+	aspect-ratio: 16 / 10;
+}
+
+.b-figure--tall .b-figure__media {
+	aspect-ratio: 4 / 5;
+}
+
+.b-figure--wide .b-figure__media {
+	aspect-ratio: 21 / 9;
+}
+
+.b-figure--standard .b-figure__media img,
+.b-figure--tall .b-figure__media img,
+.b-figure--wide .b-figure__media img {
+	height: 100%;
+	object-fit: var(--fig-fit, cover);
+}
+
+/* Placeholder state — removed at CSS close-out once all slots carry media. */
+.b-figure__media--placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	text-align: center;
+	background: repeating-linear-gradient(45deg, rgba(141, 162, 188, 0.05) 0 12px, transparent 12px 24px), linear-gradient(140deg, #071233, #03020d);
+}
+
+.b-figure__media--placeholder span {
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	line-height: 1.9;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.b-figure__media--placeholder::after {
+	content: attr(data-kind);
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	padding: 3px 8px;
+	border: 1px solid rgba(4, 138, 191, 0.45);
+	border-radius: 2px;
+	background: rgba(4, 138, 191, 0.1);
+	font-family: var(--f-m);
+	font-size: 11px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--vq-summer);
+}
+
+/* Logo card (framework .logocard): a white card sized to the mark, not a cropped
+   media frame — so no aspect ratio and the image is contained, never covered. */
+.b-figure--logo .b-figure__media {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: auto;
+	padding: 32px;
+	background: #fff;
+}
+
+.b-figure--logo .b-figure__media img {
+	width: auto;
+	max-height: 140px;
+	object-fit: contain;
+}
+
+/* Caption type is the global figcaption rule; the figure adds nothing. */
+
+/* --------------------------------------------------------------------------
+   Block: cards
+   Source: .cards / .card
+   -------------------------------------------------------------------------- */
+.b-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1px;
+	border: 1px solid var(--hair);
+	background: var(--hair);
+}
+
+.b-cards__card {
+	flex: 1 1 240px;
+	padding: 30px 28px 34px;
+	background: var(--vq-midnight);
+	color: var(--paper);
+	text-decoration: none;
+	transition: var(--ease);
+}
+
+.b-cards__card:hover {
+	background: var(--surface-hover);
+}
+
+.b-cards__index {
+	display: block;
+	margin-bottom: 16px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--vq-summer);
+}
+
+.b-cards__title {
+	font-size: 19px;
+	margin-bottom: 10px;
+}
+
+.b-cards__title:last-child {
+	margin-bottom: 0;
+}
+
+.b-cards__text {
+	margin: 0;
+	font-size: 14.5px;
+	color: var(--muted);
+}
+
+.b-cards__note {
+	margin: 14px 0 0;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.15em;
+	color: var(--vq-summer);
+}
+
+/* Tile image above the title (index.html's NEMA cards). The framework spaces the
+   heading off the figure by 20px; the figure itself sits flush in the card. */
+.b-cards__figure {
+	margin-bottom: 20px;
+}
+
+/* Cards sit in a grid like gallery cells, so a tile with no ratio chosen holds
+   the framework's 16:10 instead of following its own image. A chosen ratio wins.
+   So does --contain: here the 16:10 is an imposed fallback rather than a chosen
+   frame, so asking to fit the whole image drops the frame entirely and the tile
+   falls through to the base rule — the image at its own proportions, the border
+   hugging it, nothing cropped and no letterbox to align. Cards are flex items
+   that stretch to equal height, so a tile keeping its own proportions shifts
+   only where its own title starts, not the height of the band. */
+.b-cards__figure .b-figure:not(.b-figure--standard):not(.b-figure--tall):not(.b-figure--wide):not(.b-figure--logo):not(.b-figure--contain) .b-figure__media {
+	aspect-ratio: 16 / 10;
+}
+
+.b-cards__figure .b-figure:not(.b-figure--standard):not(.b-figure--tall):not(.b-figure--wide):not(.b-figure--logo):not(.b-figure--contain) .b-figure__media img {
+	height: 100%;
+	object-fit: cover;
+}
+
+.b-cards__links {
+	margin-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Block: children
+   Source: .children / .children a
+   Wider cells than .b-cards (250px vs 240px) and no body copy: the framework
+   uses this grid for navigation, not description.
+   -------------------------------------------------------------------------- */
+.b-children {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1px;
+	border: 1px solid var(--hair);
+	background: var(--hair);
+}
+
+.b-children__item {
+	display: block;
+	flex: 1 1 250px;
+	padding: 28px;
+	background: var(--vq-midnight);
+	color: var(--paper);
+	text-decoration: none;
+	transition: var(--ease);
+}
+
+.b-children__item:hover {
+	background: var(--surface-hover);
+}
+
+.b-children__index {
+	display: block;
+	margin-bottom: 14px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--vq-ocean);
+}
+
+.b-children__title {
+	margin: 0;
+	font-size: 19px;
+}
+
+/* --------------------------------------------------------------------------
+   Block: gallery
+   Source: .gallery
+   -------------------------------------------------------------------------- */
+.b-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 26px;
+}
+
+/* A gallery is a grid, so a figure with no ratio chosen holds the framework's
+   16:10 rather than following its own image and leaving the row ragged.
+   Every framework gallery figure is a plain .ph. A chosen ratio still wins, and
+   so does --contain, on the same reading as the cards tile: the fallback frame
+   is dropped and the cell follows its image. Unlike cards there is no stretch to
+   even the row out, so a mixed-proportion gallery will go ragged — which is the
+   editor's choice to make per figure. */
+.b-gallery .b-figure:not(.b-figure--standard):not(.b-figure--tall):not(.b-figure--wide):not(.b-figure--logo):not(.b-figure--contain) .b-figure__media {
+	aspect-ratio: 16 / 10;
+}
+
+.b-gallery .b-figure:not(.b-figure--standard):not(.b-figure--tall):not(.b-figure--wide):not(.b-figure--logo):not(.b-figure--contain) .b-figure__media img {
+	height: 100%;
+	object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   Block: diagram
+   Source: .diagram / .quincunx / .dg-* (the .dg-* classes live inside the SVG
+   files and are declared under their own banner below)
+   The viewport scrolls instead of shrinking the SVG past the point where its
+   labels stop being readable; --diagram-min is that point, set per diagram
+   from its own viewBox width by verquin_diagrams().
+   -------------------------------------------------------------------------- */
+.b-diagram {
+	margin: 0;
+	padding: clamp(18px, 3vw, 34px);
+	border: 1px solid var(--hair);
+	background: linear-gradient(180deg, #050d24, #03020d);
+}
+
+.b-diagram--compact {
+	max-width: 300px;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+.b-diagram__viewport {
+	max-width: 100%;
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+	-webkit-overflow-scrolling: touch;
+}
+
+.b-diagram__viewport:focus-visible {
+	outline: 2px solid var(--vq-summer);
+	outline-offset: 4px;
+}
+
+.b-diagram svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.b-diagram__viewport svg {
+	min-width: var(--diagram-min, 620px);
+}
+
+/* Type comes from the global figcaption rule; only the gap differs. */
+.b-diagram__caption {
+	margin-top: 18px;
+}
+
+@media print {
+	.b-diagram__viewport {
+		overflow: visible;
+	}
+
+	.b-diagram__viewport svg {
+		min-width: 0;
+		width: 100%;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   Diagram internals (.dg-*)
+   Source: style.css "DIAGRAMS"
+   Applied by the SVG files in assets/svg/, not by any template.
+   -------------------------------------------------------------------------- */
+.dg-label {
+	font-family: var(--f-m);
+	font-size: 11px;
+	letter-spacing: 0.02em;
+	fill: var(--paper);
+}
+
+.dg-label.sm {
+	font-size: 9.5px;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	fill: var(--muted-dark);
+}
+
+.dg-label.hi {
+	fill: var(--vq-summer);
+}
+
+/* Replaces an inline style="fill:..." in monument-comparison.svg. */
+.dg-label.weak {
+	fill: var(--muted-dark);
+}
+
+.dg-num {
+	font-family: var(--f-m);
+	font-size: 10px;
+	fill: var(--muted-dark);
+}
+
+.dg-grid {
+	stroke: rgba(141, 162, 188, 0.13);
+	stroke-width: 1;
+}
+
+.dg-ground {
+	stroke: rgba(141, 162, 188, 0.5);
+	stroke-width: 1.5;
+}
+
+.dg-leg {
+	fill: none;
+	stroke: var(--vq-summer);
+	stroke-width: 3;
+	stroke-linecap: round;
+}
+
+/* Dashed, not merely paler: the comparison diagram's point is the pillar against
+   the braced monuments, and colour alone would not carry that to every reader. */
+.dg-leg-weak {
+	fill: none;
+	stroke: var(--muted-dark);
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-dasharray: 10 7;
+}
+
+/* Ring around the centre mark; replaces stroke="var(…)" as a presentation
+   attribute in quincunx.svg, where custom properties are not reliably resolved. */
+.dg-mark-ring {
+	fill: none;
+	stroke: var(--vq-summer);
+	stroke-width: 1.5;
+	opacity: 0.5;
+}
+
+.dg-decouple {
+	stroke: var(--vq-ocean);
+	stroke-width: 8;
+	stroke-linecap: butt;
+	opacity: 0.32;
+}
+
+.dg-mark {
+	fill: var(--vq-summer);
+}
+
+.dg-mark-weak {
+	fill: var(--muted-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Block: video
+   Source: .ph[data-kind="Video"] — placeholders in the framework, so the frame
+   follows the implementation guide. 16:9 is the video default; tall and wide
+   mean what they mean on a figure.
+   -------------------------------------------------------------------------- */
+.b-video {
+	margin: 0;
+}
+
+.b-video__frame {
+	aspect-ratio: 16 / 9;
+	border: 1px solid var(--hair);
+	overflow: hidden;
+}
+
+.b-video--tall .b-video__frame {
+	aspect-ratio: 4 / 5;
+}
+
+.b-video--wide .b-video__frame {
+	aspect-ratio: 21 / 9;
+}
+
+.b-video__frame iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+/* Type comes from the global figcaption rule; only the gap differs. */
+.b-video__caption {
+	margin-top: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Block: faq-item
+   Source: .faq details / summary / .ans / .verdict
+   The hairlines live on the item, not the list: .r-faq adds only the top rule,
+   so a group of one still closes correctly.
+   -------------------------------------------------------------------------- */
+.b-faq-item {
+	border-bottom: 1px solid var(--hair);
+}
+
+.b-faq-item__question {
+	position: relative;
+	padding: 22px 44px 22px 0;
+	cursor: pointer;
+	list-style: none;
+	font-family: var(--f-d);
+	font-size: clamp(16px, 1.7vw, 19px);
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -0.01em;
+	color: var(--paper);
+}
+
+.b-faq-item__question::-webkit-details-marker {
+	display: none;
+}
+
+.b-faq-item__question::after {
+	content: "+";
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	transform: translateY(-50%);
+	font-family: var(--f-m);
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--vq-summer);
+}
+
+.b-faq-item[open] .b-faq-item__question::after {
+	content: "\2212";
+}
+
+.b-faq-item__question:hover {
+	color: var(--vq-summer);
+}
+
+.b-faq-item__answer {
+	max-width: var(--measure);
+	padding: 0 44px 26px 0;
+}
+
+.b-faq-item__answer p {
+	font-size: 15px;
+	line-height: 1.65;
+	color: var(--muted);
+}
+
+.b-faq-item__answer > :last-child {
+	margin-bottom: 0;
+}
+
+.b-faq-item__verdict {
+	margin-bottom: 12px;
+	font-family: var(--f-d);
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	color: var(--paper);
+}
+
+/* The nested blocks sit tighter inside an answer than they do at band level. */
+.b-faq-item__answer .b-spec-table {
+	margin: 20px 0 4px;
+}
+
+.b-faq-item__answer .b-callout {
+	margin: 20px 0 4px;
+	padding: 16px 20px;
+}
+
+.b-faq-item__answer .b-links {
+	margin-top: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Block: labelled-text
+   Source: .sublabel + p.small groups inside .txt
+   The label and body reuse the global .sublabel and .small type; the block owns
+   only the gap between groups, which the framework repeated inline as 34px.
+   -------------------------------------------------------------------------- */
+.b-labelled-text__group + .b-labelled-text__group {
+	margin-top: var(--space-4);
+}
+
+.b-labelled-text__group .small > :last-child {
+	margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Block: timeline
+   Source: .tl / .ev / .yr
+   The marker dot sits on the rule, so the event is positioned and the dot is
+   pulled back by the padding plus half its own width.
+   -------------------------------------------------------------------------- */
+.b-timeline {
+	padding-left: 30px;
+	border-left: 1px solid var(--hair);
+}
+
+.b-timeline__event {
+	position: relative;
+	padding-bottom: var(--space-5);
+}
+
+.b-timeline__event:last-child {
+	padding-bottom: 0;
+}
+
+.b-timeline__event::before {
+	content: "";
+	position: absolute;
+	top: 9px;
+	left: -35px;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--vq-summer);
+}
+
+.b-timeline__year {
+	display: block;
+	margin-bottom: 7px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	color: var(--vq-summer);
+}
+
+.b-timeline__event p {
+	margin: 0 0 0.9em;
+	font-size: 14.5px;
+	color: var(--muted);
+}
+
+.b-timeline__event p:last-child {
+	margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Block: references
+   Source: h3 + ol.refs
+   90ch, not --measure: citations run long and wrap badly at reading width.
+   -------------------------------------------------------------------------- */
+.b-references__list {
+	max-width: 90ch;
+	margin: var(--space-3) 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.b-references__item {
+	margin-bottom: 16px;
+	padding-left: 2em;
+	text-indent: -2em;
+	font-family: var(--f-m);
+	font-size: 12px;
+	line-height: 1.7;
+	color: var(--muted-dark);
+}
+
+.b-references__item:last-child {
+	margin-bottom: 0;
+}
+
+.b-references__group + .b-references__group {
+	margin-top: var(--space-6);
+}
+
+.b-references__heading {
+	margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Block: spec-table
+   Source: table.spec / caption / td:first-child / td:last-child
+   Base = rows stack label over value; the two-column layout is added at --bp-sm.
+   -------------------------------------------------------------------------- */
+.b-spec-table {
+	display: block;
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--f-m);
+	font-size: 13.5px;
+	line-height: 1.5;
+}
+
+.b-spec-table tbody,
+.b-spec-table__row {
+	display: block;
+}
+
+.b-spec-table__caption {
+	display: block;
+	padding-bottom: 12px;
+	border-bottom: 1px solid var(--hair);
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	text-align: left;
+	color: var(--vq-summer);
+}
+
+.b-spec-table__row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2px 20px;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--hair);
+}
+
+.b-spec-table__label {
+	font-weight: 400;
+	text-align: left;
+	color: var(--muted);
+}
+
+.b-spec-table__value {
+	font-weight: 500;
+	color: var(--paper);
+}
+
+.b-spec-table__value p {
+	margin: 0;
+	max-width: none;
+}
+
+.b-spec-table--compact {
+	font-size: 12.5px;
+}
+
+.b-spec-table--compact .b-spec-table__row {
+	padding: 10px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Block: links
+   Source: ul.links > li > a
+   -------------------------------------------------------------------------- */
+.b-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px 22px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.b-links__link {
+	display: inline-block;
+	padding-bottom: 3px;
+	border-bottom: 1px solid rgba(63, 176, 224, 0.4);
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--link);
+}
+
+.b-links__link:hover {
+	border-color: var(--paper);
+	color: var(--paper);
+}
+
+/* --------------------------------------------------------------------------
+   Block: pending
+   Source: .pending — development scaffolding, removed when copy arrives
+   -------------------------------------------------------------------------- */
+.b-pending {
+	max-width: var(--measure);
+	margin: 0;
+	padding: 14px 18px;
+	border: 1px dashed var(--hair);
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.06em;
+	color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Section: page-head
+   Source: header.pagehead / .pagehead.tall / .crumb
+   -------------------------------------------------------------------------- */
+.s-page-head {
+	padding-block: clamp(64px, 9vw, 120px) clamp(48px, 6vw, 80px);
+	background: radial-gradient(120% 90% at 74% 8%, rgba(3, 62, 140, 0.42), transparent 60%), linear-gradient(180deg, var(--vq-midnight), var(--vq-black));
+	border-bottom: 1px solid var(--hair);
+}
+
+.s-page-head--tall {
+	display: flex;
+	align-items: flex-end;
+	min-height: 80vh;
+	padding-block: clamp(80px, 12vw, 150px) clamp(48px, 7vw, 90px);
+}
+
+.s-page-head--tall .wrap {
+	width: 100%;
+}
+
+.s-page-head__crumb {
+	margin-bottom: 18px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.s-page-head__crumb a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.s-page-head__crumb a:hover {
+	color: var(--vq-summer);
+}
+
+.s-page-head__crumb a::after {
+	content: "/";
+	margin-inline: 0.8em;
+	color: var(--muted-dark);
+}
+
+.s-page-head__heading em {
+	font-style: normal;
+	color: var(--vq-summer);
+}
+
+.s-page-head__lede {
+	max-width: 58ch;
+}
+
+/* --------------------------------------------------------------------------
+   Section: band
+   Source: section > .wrap (intro: eyebrow, h2, .lede)
+   -------------------------------------------------------------------------- */
+.s-band > .wrap > .s-band__intro + [class^="r-"] {
+	margin-top: var(--space-5);
+}
+
+/* Rows stack with the framework's block-to-block rhythm. */
+.s-band > .wrap > [class^="r-"] + [class^="r-"] {
+	margin-top: clamp(64px, 8vw, 110px);
+}
+
+/* --------------------------------------------------------------------------
+   Section: form
+   Source: section > .wrap > .form / .form.wide
+   -------------------------------------------------------------------------- */
+.s-form__intro {
+	margin-bottom: var(--space-5);
+}
+
+.s-form__form {
+	max-width: 560px;
+}
+
+.s-form--wide .s-form__form {
+	max-width: 760px;
+}
+
+/* --------------------------------------------------------------------------
+   Row: text-media
+   Source: .block / .block.flip / .txt
+   -------------------------------------------------------------------------- */
+/* Base = single column; two columns (text | media, or flipped) from --bp-md. */
+.r-text-media {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: clamp(30px, 6vw, 80px);
+	align-items: center;
+}
+
+/* Grid items default to min-width:auto, so a child with a large intrinsic width
+   — a diagram SVG carrying its readable-floor min-width — would refuse to shrink,
+   widen .wrap past the viewport, and leave every later section laid out narrow
+   inside an over-wide page. The track minmax(0,…) alone does not cover it. */
+.r-text-media__text,
+.r-text-media__media {
+	min-width: 0;
+}
+
+/* Inline links in body copy: colour alone is below 3:1 against --paper, so the framework's
+   faint border-bottom cue (as on .links a) marks them; no underline glyph.
+   Prose containers are named rather than excluding .btn and .b-links__link: those carry
+   their own cue, and a bare `a` here outranks both and flattens their padding. */
+.r-text-media__text .small a,
+.r-text-media__text .b-callout a,
+.r-text-media__text .b-spec-table__value a {
+	padding-bottom: 1px;
+	border-bottom: 1px solid rgba(63, 176, 224, 0.4);
+}
+
+.r-text-media__text .small a:hover,
+.r-text-media__text .b-callout a:hover,
+.r-text-media__text .b-spec-table__value a:hover {
+	border-color: var(--paper);
+}
+
+/* Rhythm inside the text column. The column owns the gaps between its parts;
+   the blocks set no outer margin of their own. */
+.r-text-media__text > * + * {
+	margin-top: var(--space-4);
+}
+
+.r-text-media__text > .eyebrow + *,
+.r-text-media__text > h2 + * {
+	margin-top: 0;
+}
+
+.r-text-media__text > .b-spec-table + .b-spec-table {
+	margin-top: var(--space-5);
+}
+
+.r-text-media__text > .b-callout,
+.r-text-media__text > .b-buttons {
+	margin-top: var(--space-5);
+}
+
+/* Media column holding tables instead of a figure: the framework's second .txt
+   cell, which spaces its stacked tables exactly as the text column does. */
+.r-text-media__media > .b-spec-table + .b-spec-table {
+	margin-top: var(--space-5);
+}
+
+/* --------------------------------------------------------------------------
+   Row: cards
+   Source: .cards as a band row
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-cards {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: child-index
+   Source: .children as a band row
+   The block carries the whole appearance; the row exists as its band-level slot.
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-child-index {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: gallery
+   Source: .gallery as a band row
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-gallery {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: figure
+   Source: standalone figure under .wrap
+   The framework caps two of its seven cases inline (520px, 620px); --narrow
+   replaces both with the shared reading measure.
+   -------------------------------------------------------------------------- */
+.r-figure--narrow {
+	max-width: var(--measure);
+}
+
+.r-text-media + .r-figure {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: diagram
+   Source: figure.diagram / figure.quincunx as a band row
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-diagram {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: video
+   Source: .ph[data-kind="Video"] as a band row
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-video {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: faq
+   Source: .faq as a band row
+   -------------------------------------------------------------------------- */
+.r-faq {
+	border-top: 1px solid var(--hair);
+}
+
+.r-text-media + .r-faq {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: timeline
+   Source: .tl as a band row
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-timeline {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: references
+   Source: h3 + ol.refs as a band row
+   -------------------------------------------------------------------------- */
+.r-text-media + .r-references {
+	margin-top: var(--space-7);
+}
+
+/* --------------------------------------------------------------------------
+   Row: spec-tables
+   Source: table.spec standalone or grouped under .block
+   Base = one column; --paired becomes two columns at --bp-md.
+   -------------------------------------------------------------------------- */
+.r-spec-tables {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-4);
+}
+
+.r-spec-tables--narrow {
+	max-width: var(--measure);
+}
+
+/* --------------------------------------------------------------------------
+   Row: callout
+   Source: .callout as the only content of a band
+   -------------------------------------------------------------------------- */
+.r-callout {
+	max-width: var(--measure);
+}
+
+/* --------------------------------------------------------------------------
+   Row: links
+   Source: ul.links under .wrap
+   -------------------------------------------------------------------------- */
+[class^="r-"] + .r-links {
+	margin-top: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   Row: text
+   Source: standalone p.lede or p.small after another row
+   -------------------------------------------------------------------------- */
+.r-text p:last-child {
+	margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Row: buttons
+   Source: .acts as a direct child of .wrap
+   -------------------------------------------------------------------------- */
+.r-buttons {
+	margin-top: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   Row: pending
+   Source: .pending as a band row
+   -------------------------------------------------------------------------- */
+/* No rules: the block carries the whole appearance and the row adds no placement. */
+
+/* --------------------------------------------------------------------------
+   Row: data-chart
+   Source: legacy site's D3 charts (css/vis.css of the neve-child theme)
+   The row owns the surface and the sideways scrolling; the .vis rules below are
+   the library's own, migrated to tokens and left namespaced.
+   These rules are being re-skinned for the 2026 design: the colours below came
+   from the legacy light-background pages. The first migrated state is kept
+   verbatim, unenqueued, in datachart-legacy-reference.css — edit here, not
+   there. .vis text's stroke is a halo and must track the surface colour.
+   -------------------------------------------------------------------------- */
+.r-data-chart {
+	--chart-surface: var(--vq-midnight);
+	--chart-ink: var(--paper);
+	--chart-axis: var(--paper-dim);
+	--chart-rule: var(--muted-dark);
+	/* Events — firmware installed, vegetation cleared, an earthquake — are
+	   editorial rather than measured, so the flag is the chart's only warm
+	   colour and nothing in the data can be mistaken for one. The legacy red
+	   lifted for a dark surface, 6.6:1, so the 10px badge also passes as text.
+	   Deliberately not --warn, which means validation error in the forms, and
+	   not --vq-summer, which is this theme's interaction colour: the focus ring
+	   lands on this row's own scroll viewport. */
+	--chart-flag: #e8736f;
+
+	/* The plotted points and the error bars are canvas-drawn, so no rule below
+	   can reach them; vis-color.js reads these three once per chart at init.
+
+	   Alpha is part of the value: the points overplot heavily and that density
+	   is the information, so a flat colour loses it. At 45% a single outlying
+	   point still measures 4.07:1 against the surface; at 35% one alone is
+	   2.90:1, under the 3:1 non-text floor.
+
+	   The two series colours are near-equal in lightness and differ in hue
+	   instead. On a near-black surface a translucent saturated colour cannot
+	   clear 3:1 at all — #048abf at 35% is 1.90:1 — so the pair is achromatic
+	   against cyan, which also survives red-green colour blindness. --chart-dot
+	   is the single series (positions N/E/V, slips); --chart-dot-alt is the
+	   second series in the QC panels. */
+	--chart-dot: rgb(237 241 246 / 45%); /* --paper, 4.07:1 per point */
+	--chart-dot-alt: rgb(63 176 224 / 70%); /* --link, 4.33:1 per point */
+
+	/* Uncertainty is subordinate by geometry, not colour: a 1px hairline the
+	   library draws beneath the dots. Held at 3.74:1 rather than dimmer — it
+	   carries the precision, so it stays above the non-text floor. */
+	--chart-error-bar: var(--muted-dark);
+
+	background: var(--chart-surface);
+	border: 1px solid var(--hair);
+	padding: var(--space-3);
+}
+
+/* Readable floor plus sideways scrolling, as .b-diagram__viewport does: the
+   chart keeps its width and the viewport scrolls, rather than the chart
+   shrinking until its axis labels are unreadable. Focusable so the scroll is
+   reachable by keyboard. */
+.r-data-chart__viewport {
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+}
+
+.r-data-chart__canvas {
+	min-width: var(--chart-min, 860px);
+}
+
+/* The library's stylesheet. Montserrat and the literal brand hexes are gone;
+   everything else is as supplied, so a re-export of the vis code stays
+   comparable with this. */
+.vis {
+	font-family: var(--f-d);
+	font-size: 0.625rem;
+	color: var(--chart-ink);
+	--clr-blue-500: var(--vq-summer);
+	--clr-blue-600: var(--vq-ocean);
+	--clr-blue-700: var(--vq-celestial);
+	--clr-blue-800: var(--vq-midnight);
+	--clr-blue-900: var(--vq-black);
+	--clr-red-500: #c06363;
+	--clr-red-600: #d65d5b;
+	--clr-red-700: var(--chart-flag);
+	--clr-red-800: #9b2a26;
+}
+
+.vis svg,
+.vis canvas {
+	display: block;
+	width: 100%;
+	overflow: visible;
+}
+
+.vis .vis-title {
+	font-size: 1rem;
+}
+
+.vis .vis-body {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 24px repeat(3, 160px) 24px;
+}
+
+.vis .chart-wrap:nth-child(1) {
+	grid-row: 2;
+	grid-column: 1;
+}
+
+.vis .chart-wrap:nth-child(2) {
+	grid-row: 3;
+	grid-column: 1;
+}
+
+.vis .chart-wrap:nth-child(3) {
+	grid-row: 4;
+	grid-column: 1;
+}
+
+.vis .annotations-wrap {
+	grid-row: 1 / 6;
+	grid-column: 1;
+	position: relative;
+}
+
+.vis .annotation-line {
+	color: var(--chart-flag);
+	stroke-dasharray: 1, 3;
+}
+
+.vis .annotation-badge {
+	color: var(--chart-flag);
+}
+
+.vis .annotation-g.is-active .annotation-line {
+	stroke-dasharray: unset;
+}
+
+.vis .annotation-item {
+	display: flex;
+	margin-top: 0.25rem;
+}
+
+.vis .annotation-swatch {
+	margin-right: 0.5rem;
+}
+
+.vis .annotation-swatch svg {
+	width: auto;
+}
+
+/* Not --chart-dot: that token is 45% translucent, which is fine for a plotted
+   point but measures 4.07:1 as 12px text, under the 4.5:1 AA floor. */
+.vis .annotation-text {
+	font-size: 0.75rem;
+	color: var(--chart-ink);
+}
+
+.vis .chart-wrap {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 100%;
+}
+
+.vis .chart-wrap > * {
+	grid-row: 1;
+	grid-column: 1;
+}
+
+/* d3's axis text carries no fill attribute, so without this it paints with the
+   SVG default — black, invisible on a dark panel. currentColor rather than the
+   token directly, so .axis-g's own colour still reaches its labels.
+   The stroke is a halo that keeps a label legible where it crosses a plotted
+   line; it has to match the surface, hence the shared token. */
+.vis text {
+	fill: currentColor;
+	stroke: var(--chart-surface);
+	stroke-width: 3;
+	paint-order: stroke;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.vis .title-g .title-text {
+	font-size: 0.75rem;
+}
+
+.vis .title-g .unit-text {
+	color: var(--chart-axis);
+}
+
+.vis .vis-footer > * + * {
+	margin-top: 1rem;
+}
+
+.vis .vis-footer .custom-footer {
+	font-size: 0.75rem;
+}
+
+.vis .axis-g {
+	font-family: inherit;
+	font-size: inherit;
+	color: var(--chart-axis);
+}
+
+.vis .axis-g line,
+.vis .axis-g path {
+	color: var(--chart-rule);
+}
+
+.vis .vis-tooltip {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: var(--vq-black);
+	/* The legacy box-shadow was the tooltip's only boundary and is invisible on
+	   a dark surface — and --vq-black on --vq-midnight is barely a step. The
+	   hairline is what separates it from the panel. */
+	border: 1px solid var(--hair);
+	max-width: 240px;
+	font-size: 0.75rem;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.25rem;
+	box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.vis .vis-tooltip.is-visible {
+	opacity: 1;
+}
+
+.vis .vis-tooltip .tooltip-date {
+	font-size: 0.625rem;
+	color: var(--chart-axis);
+}
+
+/* Shown in place of the chart when a CSV fails to load. --warn is the theme's
+   failure colour (8.9:1 here); the legacy #9b2a26 measured 2.55:1 on this
+   surface and failed AA as text. */
+.vis .alert-error {
+	font-size: 0.75rem;
+	color: var(--warn);
+}
+
+/* --------------------------------------------------------------------------
+   Forms: plugin output (global)
+   Source: .form, .form label, inputs, .row2, .fieldgroup, .choices
+   Styles Contact Form 7's own markup: <p><label>text<br><span
+   class="wpcf7-form-control-wrap"><input class="wpcf7-form-control ..."></span></label></p>.
+   Framework classes (row2, fieldgroup, choices) apply when a form definition uses them.
+   -------------------------------------------------------------------------- */
+.wpcf7-form p {
+	max-width: none;
+	margin: 0 0 var(--space-2);
+}
+
+.wpcf7-form label {
+	display: block;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+/* CF7 separates label text from the control with <br>; the wrap becomes the spacing. */
+.wpcf7-form label br {
+	display: none;
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+	margin-top: 8px;
+}
+
+.wpcf7-form-control {
+	width: 100%;
+	min-height: 44px;
+	padding: 13px 15px;
+	background: var(--vq-midnight);
+	border: 1px solid var(--hair);
+	border-radius: 2px;
+	font-family: var(--f-d);
+	font-size: 15px;
+	color: var(--paper);
+}
+
+.wpcf7-form-control::placeholder {
+	color: var(--muted);
+}
+
+.wpcf7-form-control:focus-visible {
+	outline: 2px solid var(--vq-summer);
+	outline-offset: 1px;
+}
+
+.wpcf7-textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.wpcf7-form-control[aria-invalid="true"] {
+	border-color: var(--warn);
+}
+
+/* Submit keeps the global button look; CF7 renders it as an input. */
+.wpcf7-submit {
+	width: auto;
+	padding: 12px 22px;
+	background: var(--vq-ocean);
+	border: 0;
+	font-family: var(--f-m);
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: #fff;
+	cursor: pointer;
+	transition: var(--ease);
+}
+
+.wpcf7-submit:hover {
+	background: var(--vq-celestial);
+}
+
+.wpcf7-spinner {
+	margin-left: 12px;
+}
+
+/* Validation and status messages: colour is never the only cue — the text says what happened. */
+.wpcf7-not-valid-tip {
+	margin-top: 8px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	color: var(--warn);
+}
+
+.wpcf7-response-output {
+	margin: var(--space-3) 0 0;
+	padding: 14px 18px;
+	border: 1px solid var(--hair);
+	border-left-width: 3px;
+	font-size: 14.5px;
+}
+
+/* CF7 5+ carries the outcome on the form as data-status; the 4.x wrapper classes
+   (.wpcf7-mail-sent-ok, .wpcf7-invalid …) no longer exist. Verified against 6.1.7. */
+.wpcf7-form[data-status="sent"] .wpcf7-response-output {
+	border-left-color: var(--vq-summer);
+}
+
+.wpcf7-form[data-status="invalid"] .wpcf7-response-output,
+.wpcf7-form[data-status="unaccepted"] .wpcf7-response-output,
+.wpcf7-form[data-status="spam"] .wpcf7-response-output,
+.wpcf7-form[data-status="aborted"] .wpcf7-response-output,
+.wpcf7-form[data-status="failed"] .wpcf7-response-output {
+	border-left-color: var(--warn);
+	color: var(--warn);
+}
+
+/* Framework field grouping, used when a CF7 form definition carries these classes. */
+.fieldgroup {
+	margin-bottom: 10px;
+}
+
+.fieldgroup > .lbl {
+	display: block;
+	margin-bottom: 10px;
+	font-family: var(--f-m);
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.choices {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 0 0 var(--space-2);
+}
+
+.choices label {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 44px;
+	margin: 0;
+	padding: 9px 14px;
+	border: 1px solid var(--hair);
+	border-radius: 2px;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	cursor: pointer;
+}
+
+.choices label:hover {
+	border-color: var(--vq-summer);
+	color: var(--vq-summer);
+}
+
+.choices .wpcf7-form-control-wrap,
+.choices input {
+	display: inline;
+	width: auto;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* Two-column field rows are added at --bp-sm. */
+.row2 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0 18px;
+}
+
+.wpcf7-recaptcha-disclaimer {
+	margin-top: 10px;
+	font-size: 0.8em;
+	opacity: 0.8;
+}
+
+/* reCAPTCHA v3 badge hidden per Google's terms; the legal notice is appended to every form (inc/forms.php). */
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Breakpoints
+   Ascending min-width blocks; inside each, owner sub-banners follow the file order above.
+   Base rules (small screens) live under their owner banner; only enhancements live here.
+   -------------------------------------------------------------------------- */
+@media (min-width: 621px) {
+	/* --bp-sm */
+
+	/* Block: spec-table */
+	.b-spec-table__row {
+		grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+		gap: 0 20px;
+	}
+
+	/* Forms: plugin output */
+	.row2 {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 921px) {
+	/* --bp-md */
+
+	/* Site footer */
+	.site-footer__cols {
+		grid-template-columns: 1.4fr repeat(3, 1fr);
+	}
+
+	/* Row: text-media */
+	.r-text-media {
+		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	}
+
+	.r-text-media--text-only,
+	.r-text-media--diagram-wide {
+		grid-template-columns: none;
+	}
+
+	.r-text-media--flip .r-text-media__text {
+		order: 2;
+	}
+
+	/* A diagram that fits its column scales fluidly, as the framework's own
+	   .diagram svg{width:100%} did; the readable floor and its scrollbar are for
+	   the full-width cases, where the column is wide enough for them to mean
+	   something. A --diagram-wide row is full width, so it keeps the floor. */
+	.r-text-media:not(.r-text-media--diagram-wide) .r-text-media__media .b-diagram__viewport svg {
+		min-width: 0;
+	}
+
+	/* Row: spec-tables */
+	.r-spec-tables--paired {
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-4) var(--space-6);
+		align-items: start;
+	}
+}
+
+@media (min-width: 1041px) {
+	/* --bp-lg */
+
+	/* Site header */
+	.site-header__nav {
+		display: flex;
+		position: static;
+		flex: 1;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+		max-height: none;
+		overflow: visible;
+		padding: 0;
+		background: transparent;
+		border-bottom: 0;
+	}
+
+	.site-header__cta {
+		margin-top: 0;
+	}
+
+	.site-header__toggle {
+		display: none;
+	}
+
+	/* Block: menu */
+
+	/* The desktop row belongs to the header nav, not to the menu block as such:
+	   the footer's --plain lists are vertical at every width, which the base rule
+	   already says. Excluding --plain narrows this to its actual cause rather than
+	   restating column/gap:0 here as a counter-rule. */
+	.b-menu:not(.b-menu--plain) {
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	.b-menu__item {
+		border-bottom: 0;
+	}
+
+	.b-menu:not(.b-menu--plain) .b-menu__link {
+		display: inline-block;
+		padding: 6px 0;
+	}
+
+	.b-menu__item--has-sub > .b-menu__link {
+		padding-right: 24px;
+	}
+
+	.b-menu__toggle {
+		width: 24px;
+		height: 100%;
+		top: 15px;
+		right: -5px;
+	}
+
+	.b-menu__sub {
+		position: absolute;
+		top: 100%;
+		left: -16px;
+		z-index: 90;
+		min-width: 270px;
+		margin: 0;
+		padding: 10px 0;
+		background: rgba(5, 10, 38, 0.98);
+		backdrop-filter: blur(14px);
+		border: 1px solid var(--hair);
+		border-top: 0;
+	}
+
+	.b-menu__item--has-sub:hover > .b-menu__sub,
+	.b-menu__item--has-sub:focus-within > .b-menu__sub {
+		display: flex;
+	}
+
+	.b-menu__sub .b-menu__link {
+		display: block;
+		padding: 9px 20px;
+	}
+
+	.b-menu__sub .b-menu__link:hover {
+		background: rgba(3, 62, 140, 0.4);
+	}
+}
+
+/* --bp-lg, mouse only. The framework's desktop nav has no toggle: submenus open on
+   hover alone. The toggle exists for pointers that cannot hover — touch laptops and
+   tablets in landscape also clear 1041px — so it is hidden by pointer capability
+   rather than by width. Keyboard access is unaffected: the dropdown opens on
+   `.b-menu__item--has-sub:focus-within` above. */
+@media (min-width: 1041px) and (hover: hover) and (pointer: fine) {
+	/* Block: menu */
+	.b-menu__toggle {
+		display: none;
+	}
+
+	.b-menu__item--has-sub > .b-menu__link {
+		padding-right: 0;
+	}
+}
